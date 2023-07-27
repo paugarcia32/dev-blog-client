@@ -18,19 +18,15 @@ export default function Post({ _id, title, summary, cover, content, createdAt, a
           <h2>{title}</h2>
         </Link>
 
-        <p className="info">
-          <a className="author" href>
+        <div className="info">
+          <Link className="author" to={'/about'}>
             {author.username}
-          </a>
+          </Link>
           <time>{formatISO9075(new Date(createdAt))}</time>
-        </p>
-        {/* Mostrar los tags asociados al post */}
-        <div className="tags-post">
-          <span className="tag">{getTagTitles()}</span>
+          <span className="tags-post">{getTagTitles()}</span>
         </div>
+
         <p className="summary">{summary}</p>
-
-
       </div>
     </div>
   );
