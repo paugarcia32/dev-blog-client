@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 
 
+
 export default function PostPage(){
  const {id} = useParams();
  const [postInfo, SetPostInfo] = useState(null)
@@ -15,10 +16,12 @@ useEffect(() => {
       SetPostInfo(postInfo)
     })
   })
-})
+}, [id])
 
 if (!postInfo) return ''
   return(
+
+
     <div className="post-page">
 
       <div className="image">

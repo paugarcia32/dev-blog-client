@@ -6,6 +6,7 @@ import IndexPage from './pages/IndexPage';
 import PostPage from './pages/PostPage';
 import { UserContextProvider } from './UserContext';
 import Layout from './common/Layout';
+import NavBar from './common/NavBar';
 
 function App() {
   return (
