@@ -9,7 +9,7 @@ export default function FilteredPosts() {
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(3); // Número de publicaciones por página
+  const [postsPerPage] = useState(2); // Número de publicaciones por página
 
   useEffect(() => {
     const fetchPosts = async () => {

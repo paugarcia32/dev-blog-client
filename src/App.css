@@ -278,7 +278,7 @@ div.tagFilter:hover {
 }
 
 .searchBar form {
-  background-color: #F2F2F2;
+  background-color: var(--extra-color);
   border-radius: 20px;
   padding: 10px 20px;
 }

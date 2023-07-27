@@ -13,15 +13,17 @@ code {
 }
 
 :root {
-  --background-color: #DDE6ED;
-  --text-color: #27374D;
-  --extra-color: #9DB2BF;
+  --background-color: #fbf8ff; /*----60%-----*/
+  --text-color: #27374D; /*----30%-----*/
+  --extra-color: #d5d8e5; /*----30%-----*/
+  --accent-color: #845ec2; /*----10%-----*/
 }
 
 [data-theme="dark"] {
-  --background-color: #27374D;
+  --background-color: #4b4453;
   --text-color: #DDE6ED;
   --extra-color: #526D82;
+  --accent-color: #845ec2;
 }
 * {
   transition: all 0.3s ease-in-out;
