@@ -1,5 +1,8 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useEffect } from "react";
+import '../styles/NavBar.css'
+import { useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function NavBar() {
   const setDarkMode = () => {
@@ -40,12 +43,27 @@ export default function NavBar() {
     }
   };
 
+  const navRef = useRef();
+
+	const showNavbar = () => {
+		navRef.current.classList.toggle(
+			"responsive_nav"
+		);
+	};
+
   return (
-    <nav className="nav">
+    <header className="nav">
+      <>
       <Link to="/" className="site-title">
         My Dev Journey
       </Link>
-      <div className="links-nav">
+      </>
+      <button
+				className="nav-btn"
+				onClick={showNavbar}>
+				<FaBars />
+			</button>
+      <nav className="links-nav" ref={navRef}>
         <ul>
           <li>
             <CustomLink to="/contact">Contact</CustomLink>
@@ -60,8 +78,14 @@ export default function NavBar() {
           id="icon"
           onClick={handleIconClick}
         />
-      </div>
-    </nav>
+        <button
+					className="nav-btn nav-close-btn"
+					onClick={showNavbar}>
+					<FaTimes />
+				</button>
+      </nav>
+
+    </header>
   );
 }
 
