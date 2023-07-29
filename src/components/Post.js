@@ -1,6 +1,8 @@
 import { formatISO9075 } from 'date-fns';
 import { Link } from 'react-router-dom';
 
+
+
 export default function Post({ _id, title, summary, cover, content, createdAt, author, tag }) {
   // Función para extraer los títulos de los tags y unirlos en una cadena
   const getTagTitles = () => tag.map((tag) => tag.title).join(' ');
@@ -28,6 +30,8 @@ export default function Post({ _id, title, summary, cover, content, createdAt, a
 
         <p className="summary">{summary}</p>
       </div>
+
+
     </div>
   );
 }
