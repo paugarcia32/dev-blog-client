@@ -3,12 +3,9 @@ import NavBar from "./NavBar";
 
 export default function Layout(){
   return(
-
     <main>
       <NavBar />
       <Outlet />
     </main>
-
-
   )
 }

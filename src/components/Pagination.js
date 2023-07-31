@@ -10,30 +10,12 @@ export default function Pagination({
     <div className="pagination">
       {currentPage > 1 && (
         <button onClick={handlePrevPage} className="paginationButton">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="paginationIcon"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 15l-6-6 6-6" />
-          </svg>
+          PREVIOUS PAGE
         </button>
       )}
       {currentPage < totalPages && (
         <button onClick={handleNextPage} className="paginationButton">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="paginationIcon"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l6 6-6 6" />
-          </svg>
+          NEXT PAGE
         </button>
       )}
     </div>

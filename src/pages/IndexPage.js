@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Post from "../components/PostCard.js";
-import Form from "react-bootstrap/Form";
 import '../styles/PostCard.css'
 import '../styles/IndexPage.css'
 import SearchBar from "../components/SearchBar.js";
@@ -16,7 +14,7 @@ export default function IndexPage() {
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(2); // Número de publicaciones por página
+  const [postsPerPage] = useState(3); // Número de publicaciones por página
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -104,11 +102,11 @@ export default function IndexPage() {
 
 
   return (
-    <div>
+    <div className="index-page">
       <SearchBar search={search} setSearch={setSearch}/>
 
       <div className="layout">
-        <DisplayPosts  posts={currentPosts} />
+        <DisplayPosts  posts={currentPosts} className="display"/>
 
         <TagFilter
           tags={tags}

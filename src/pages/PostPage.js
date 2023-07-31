@@ -1,6 +1,6 @@
 import { formatISO9075 } from "date-fns";
 import { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import TableOfContents from "../components/TOC.js";
 import '../styles/PostPage.css';
@@ -86,8 +86,11 @@ export default function PostPage() {
       </div>
       <div className="headers">
         <h1>{postInfo.title}</h1>
-        <time>{formatISO9075(new Date(postInfo.createdAt))}</time>
-        <div className="author">by {postInfo.author.username}</div>
+        <div className="h-text">
+          <time>{formatISO9075(new Date(postInfo.createdAt))}</time>
+          <div className="author">by {postInfo.author.username}</div>
+        </div>
+
       </div>
 
       <div className="toc-content">

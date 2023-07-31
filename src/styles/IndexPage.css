@@ -1,30 +1,29 @@
+/* div.index-page{
+  height: 90vh;
+} */
+
 .layout {
   display: grid;
   grid-template-columns: 5fr .5fr;
-  /* Dos columnas, la primera ocupa 2/3 del ancho y la segunda 1/3 */
   gap: 20px;
-  /* Espaciado entre las columnas */
-  background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--text);
 }
 
 
 select {
-  /* Resto de estilos... */
   appearance: none !important;
-  background-color: inherit !important;
-  background: inherit !important;
-  color-interpolation-filters: inherit !important;
-  color: inherit !important;
-  border: none;
+  background-color: var(--secondary);
+  background: var(--secondary);
+  color-interpolation-filters: var(--secondary);
+  color: var(--text);
+  border:1px;
   padding: 0 1em 0 0;
-  margin: 0;
+  margin: 15px 15px;
   font-family: inherit !important;
   font-size: inherit !important;
   cursor: pointer;
   line-height: inherit !important;
 }
-
 
 select:focus {
   outline: none;
@@ -32,81 +31,59 @@ select:focus {
 }
 
 option:checked {
-  /* Estilo para la opción seleccionada */
-  color: inherit !important;
-  /* Color del texto de la opción seleccionada */
-  background-color: inherit !important;
-  background: inherit !important;
-  /* Color de fondo de la opción seleccionada */
-  /* Puedes agregar más estilos según tus preferencias */
+  color: var(--secondary);
+  background-color: var(--secondary);
+  background: var(--secondary);
 }
 
 option:is(:checked) {
-  background-color: inherit !important;
+  background-color: var(--secondary);
 }
 
-
-
 option:hover {
-  /* Estilo para la opción al pasar el cursor sobre ella */
-  color: #888;
-  /* Color del texto de la opción al pasar el cursor sobre ella */
-  /* Puedes agregar más estilos según tus preferencias */
+  color: var(--text-dim)
 }
 
 button.filter {
-  /* Resto de estilos... */
-  color: inherit;
-  background-color: inherit;
+  color: var(--text);
+  background-color: var(--secondary);
   border: none;
   cursor: pointer;
 }
 
 
-
-
-
 div.tagFilter {
-  background-color: var(--extra-color);
-  /* Color de fondo del contenedor */
+  background-color: var(--secondary);
   border: none;
-  /* Borde con color gris */
   border-radius: 8px;
-  /* Ajusta el radio para obtener esquinas redondeadas */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Sombra para dar un efecto de relieve */
   transition: box-shadow 0.3s, transform 0.3s;
-  /* margin-top: 30px; Espacio superior entre los dos elementos */
   margin-bottom: 30px;
-  height: 400px;
+  height: auto;
   text-align: center;
   width: 100px;
 }
 
 div.tagFilter:hover {
-  /* Estilos para la card cuando se coloca el cursor sobre ella */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  /* Aumenta la sombra para un efecto de relieve más pronunciado */
   transform: translateY(-2px);
-  /* Elevación en el eje Y para el efecto de relieve */
   transform: translateX(-2px);
 }
 
 
-
-
-/* Estilos para el formulario de búsqueda */
 .searchBar {
   display: flex;
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 30px;
+  color: var(--text);
 }
 
 .searchBar form {
-  background-color: var(--extra-color);
+  background-color: var(--secondary);
   border-radius: 20px;
   padding: 10px 20px;
+  color: var(--text);
 }
 
 .searchBar input {
@@ -116,10 +93,12 @@ div.tagFilter:hover {
   width: 300px;
   font-size: 16px;
   padding: 5px;
+  color: var(--text);
 }
 
 .searchBar input::placeholder {
-  color: #888;
+  color: var(--text-accent);
+  color: var(--text);
 }
 
 div.pagination {
@@ -127,22 +106,72 @@ div.pagination {
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 30px;
+  color: var(--text);
 }
 
-/* Estilos para los botones de paginación */
-/* Estilos para los botones de paginación */
 .paginationButton {
-  background: none;
-  border: 1px solid #888;
-  /* Borde fino alrededor del botón */
-  border-radius: 50%;
-  /* Hacer que el botón sea redondo */
+  background: var(--secondary);
+  color: var(--text-dim);
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
   cursor: pointer;
+  width: 100px;
+  height: 40px;
+  margin: 7px 7px;
+
 }
 
-/* Estilos para los iconos de paginación */
 .paginationIcon {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   stroke-width: 1.5;
+}
+
+@media only screen and (max-width: 1024px) {
+
+
+    div.index-page {
+      height: 90vh;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 5fr .5fr;
+      gap: 20px;
+      color: var(--text);
+      width: auto;
+      /* align-items: center; */
+    }
+  .searchBar {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      color: var(--text);
+    }
+
+    .searchBar form {
+      background-color: var(--secondary);
+      border-radius: 20px;
+      padding: 10px 20px;
+      color: var(--text);
+    }
+
+    .searchBar input {
+      border: none;
+      background-color: transparent;
+      outline: none;
+      width: 300px;
+      font-size: 16px;
+      padding: 5px;
+      color: var(--text);
+    }
+
+    .searchBar input::placeholder {
+      color: var(--text-accent);
+      color: var(--text);
+    }
+
+
 }
