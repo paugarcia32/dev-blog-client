@@ -2,7 +2,7 @@
 
 /* Estilos para el Table of Contents (TOC) */
 .table-of-contents {
-  background-color: #f8f8f8;
+  background-color: var(--background-color);
   padding: 10px;
 }
 
@@ -23,7 +23,7 @@
 /* Evitar la decoración predeterminada de los enlaces en el TOC */
 .table-of-contents a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
 }
 
 /* Estilos para los diferentes niveles de encabezados */
