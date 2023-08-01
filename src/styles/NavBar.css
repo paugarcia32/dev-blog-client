@@ -23,7 +23,7 @@ nav li:hover {
 }
 
 .site-title {
-  font-size: 2rem;
+  max-width: 300px;
 }
 
 .nav ul {
@@ -33,10 +33,11 @@ nav li:hover {
   /* display: flex;
   gap: 1rem;
   align-items: right; */
-    display: flex;
-      gap: 1rem;
-      align-items: flex-end;
-      /* Debería ser align-items: flex-end; */
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  /* Debería ser align-items: flex-end; */
+  font-family: MontserratItalic;
 }
 
 .nav a {
@@ -47,6 +48,7 @@ nav li:hover {
   align-items: flex-end;
   padding: 0.25rem;
   color: inherit;
+
 }
 
 .links-nav {

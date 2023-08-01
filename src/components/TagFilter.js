@@ -3,7 +3,7 @@ import React from "react";
 export default function TagFilter({ tags, selectedTags, handleClearFilter, handleChange }) {
   return (
     <div className="tagFilter">
-      <h3>Tags</h3>
+      <h3 className="TagTitle">Tags</h3>
       <select
         id="tags"
         multiple
@@ -11,13 +11,13 @@ export default function TagFilter({ tags, selectedTags, handleClearFilter, handl
         onChange={(ev) => handleChange(ev.target.options)}
       >
         {tags.map((tag) => (
-          <option key={tag._id} value={tag._id}>
+          <option key={tag._id} value={tag._id} className="tags">
             {tag.title}
           </option>
         ))}
       </select>
       <button className="filter" onClick={handleClearFilter}>
-        Limpiar filtro
+        Clear filter
       </button>
     </div>
   );

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import TableOfContents from "../components/TOC.js";
 import '../styles/PostPage.css';
+import { Link } from 'react-router-dom';
 
 export default function PostPage() {
   const { id } = useParams();
@@ -88,7 +89,12 @@ export default function PostPage() {
         <h1>{postInfo.title}</h1>
         <div className="h-text">
           <time>{formatISO9075(new Date(postInfo.createdAt))}</time>
-          <div className="author">by {postInfo.author.username}</div>
+          <div className="author">
+            by&nbsp;
+            <Link className="author" to={'/about'}>
+              {postInfo.author.username}
+            </Link>
+          </div>
         </div>
 
       </div>
@@ -100,7 +106,7 @@ export default function PostPage() {
         />
         <div className="toc-tags">
           <div className="tags">
-            <strong>Related tags: </strong>
+            <strong className="related-tags">Related tags: </strong>
             <br />
             {postInfo.tag.map((associatedTag, index) => (
               <span key={associatedTag._id} className="tag">
@@ -120,7 +126,7 @@ export default function PostPage() {
           <div key={comment._id} className="comment">
             <div className="comment-header">
               <span>{comment.autor}</span>
-              <time>{formatISO9075(new Date(comment.fecha_comentario))}</time>
+              <time className="comment-time">{formatISO9075(new Date(comment.fecha_comentario))}</time>
             </div>
             <div className="comment-content">{comment.contenido}</div>
           </div>

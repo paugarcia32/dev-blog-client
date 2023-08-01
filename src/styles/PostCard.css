@@ -22,6 +22,8 @@ div.post div.texts {
   flex: 1;
 }
 
+
+
 div.post img {
   flex: 0 0 auto;
   height: 150px;
@@ -30,21 +32,35 @@ div.post img {
   object-fit: fill;
   border-radius: 8px 0 0 8px;
 }
+h2.title{
+    margin-top: 10px;
+    /* Ajusta el valor según tus preferencias */
+    font-size: 1.8rem;
+    font-family: Merriweather;
+    margin-bottom: 0px;
+}
 
-div.post div.texts h2 {
+div.post div.texts {
   margin: 0;
+    /* Ajusta el valor según tus preferencias */
   font-size: 1.8rem
 }
 
+div.info{
+  font-family: OpenSansBold;
+}
 
 
 div.post p.info a.author {
   color: inherit;
+
 }
 
 div.post p.summary {
   margin: 10px 0;
-  line-height: .8rem;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-family: OpenSans;
 }
 div.post div.texts .info {
   margin: 6px 0;

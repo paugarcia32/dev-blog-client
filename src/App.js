@@ -7,25 +7,24 @@ import PostPage from './pages/PostPage';
 import { UserContextProvider } from './UserContext';
 import Layout from './common/Layout';
 import NavBar from './common/NavBar';
+import { ThemeProvider } from './common/ThemeProvider'; // Asegúrate de importar el ThemeProvider
 
 function App() {
   return (
     <UserContextProvider>
-      <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<IndexPage />} />
-          <Route path='/post/:id' element={<PostPage />}/>
-          <Route path='/about' element={<About/>} />
-          <Route path='/contact' element={<Contact/>} >
-
+      <ThemeProvider> {/* Envuelve Layout con ThemeProvider */}
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<IndexPage />} />
+            <Route path='/post/:id' element={<PostPage />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
           </Route>
-
-        </Route>
-      </Routes>
+        </Routes>
+      </ThemeProvider>
     </UserContextProvider>
-
-
-  )
+  );
 }
 
 export default App;
+

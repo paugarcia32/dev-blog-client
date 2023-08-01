@@ -17,7 +17,7 @@ export default function Post({ _id, title, summary, cover, content, createdAt, a
 
       <div className="texts">
         <Link to={`/post/${_id}`}>
-          <h2>{title}</h2>
+          <h2 className='title'>{title}</h2>
         </Link>
 
         <div className="info">

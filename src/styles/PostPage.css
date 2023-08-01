@@ -1,13 +1,15 @@
 div.post-page{
   background-color: var(--background);
   height: auto;
+      font-family: OpenSans;
 }
 
 div.toc-content{
   display: grid;
-    grid-template-columns: 5fr .5fr;
-    gap: 20px;
-    margin-top: 20px;
+  grid-template-columns: 5fr .5fr;
+  gap: 20px;
+  margin-top: 40px;
+
 }
 
 div.headers {
@@ -21,14 +23,23 @@ div.headers {
 
 div.h-text{
   color: var(--text-dim);
+  font-size: .8rem;
 }
 
 div.toc-tags{
   width: 150px;
+  margin-top: 30px;
 }
 
 div.tags{
   margin-bottom: 15px;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .comment {
@@ -85,7 +96,8 @@ div.tags{
   background-color: #0056b3;
 }
 
-time{
+.comment-time{
   color: var(--text-dim);
+  font-size: .8rem;
 }
 
