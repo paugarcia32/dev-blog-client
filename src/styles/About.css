@@ -1,0 +1,177 @@
+section.about{
+  padding: 5rem 3rem 3rem 3rem;
+  background-color: var(--background);
+}
+div.row{
+  display: flex;
+  justify-content: space-around;
+}
+div.row div.column{
+  width: 40%;
+}
+div.column div.tabs {
+  display: flex;
+}
+
+div.signle-tab{
+  background-color: var(--background);
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+div.single-tab h2{
+  display: block;
+  padding: 10px 16px;
+  border-radius: 4px;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+div.about-img{
+  position: relative;
+  background-image: url("../Assets/profile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+  width: 100%;
+}
+
+div.content{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  display: none;
+}
+
+div.active-content{
+  display: block;
+}
+/* div.active-tab{
+  background:#18dcff;
+  position: relative;
+}
+
+div.active-tab::before{
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #18dcff transparent transparent transparent;
+} */
+
+div.active-tab h2{
+  /* background:white; */
+  color: var(--text);
+}
+
+div.content h2{
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+div.content p{
+  padding-bottom: 1rem;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: var(--text);
+}
+
+div.content h3{
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+div.skills-row{
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+div.skills-column{
+  margin-bottom: 30px;
+  margin-right: 20px;
+}
+
+div.progress-wrap h3{
+  font-size: 14px !important;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+div.progress{
+  height: 8px;
+  background: rgba(0, 0, 0, .05);
+  overflow: visible;
+}
+
+div.progress-bar{
+  width: 80%;
+  height: 8px;
+  background: var(--primary);
+}
+
+div.progress-bar span{
+  position: absolute;
+  top: -30px;
+  right: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--secondary);
+}
+
+.Designer{
+  width: 90%;
+}
+
+div.exp-column h3{
+  margin-bottom: 10px
+}
+
+div.exp-column span{
+  font-weight: 500;
+  color: #18dcff;
+}
+
+div.exp-column p{
+  margin-top: 10px;
+}
+
+@media screen and (max-width:768px) {
+  div.about{
+    padding: 2rem 1rem 3rem 1rem;
+  }
+
+  div.row{
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.about-img{
+    height: 500px;
+  }
+
+  div.row div.column {
+    width: 100%;
+  }
+
+  div.tabs{
+    padding-top: 3rem;
+  }
+
+  div.skills-row{
+    grid-template-columns: 1fr;
+  }
+}
