@@ -5,7 +5,7 @@ import "../styles/NavBar.css";
 import { useTheme } from "../common/ThemeProvider.js";
 
 export default function NavBar() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme(); // Suscribir el NavBar al contexto del tema
   const navRef = useRef();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function NavBar() {
         <FaBars />
       </button>
       <nav className="links-nav" ref={navRef}>
-                <ul>
+        <ul>
           <li>
             <CustomLink to="/contact">Contact</CustomLink>
           </li>
@@ -44,8 +44,9 @@ export default function NavBar() {
       </nav>
     </header>
   );
+}
 
-  function CustomLink({ to, children, ...props }) {
+function CustomLink({ to, children, ...props }) {
   const resolvePath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvePath.pathname, end: true });
 
@@ -56,5 +57,4 @@ export default function NavBar() {
       </Link>
     </li>
   );
-}
 }

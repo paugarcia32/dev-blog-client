@@ -107,21 +107,19 @@ export default function IndexPage() {
 
       <div className="layout">
         <DisplayPosts  posts={currentPosts} className="display"/>
-
         <TagFilter
           tags={tags}
           selectedTags={selectedTags}
           handleClearFilter={handleClearFilter}
           handleChange={handleChange}
         />
-
-        <Pagination
+      </div>
+      <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           handlePrevPage={handlePrevPage}
           handleNextPage={handleNextPage}
         />
-      </div>
     </div>
   );
 }

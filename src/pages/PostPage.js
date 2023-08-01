@@ -1,53 +1,40 @@
-import { formatISO9075 } from "date-fns";
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { UserContext } from "../UserContext";
-import TableOfContents from "../components/TOC.js";
+import React, { useEffect, useContext, useState } from 'react';
+import { formatISO9075 } from 'date-fns';
+import { useParams, Link } from 'react-router-dom';
+import { UserContext } from '../UserContext';
+import TableOfContents from '../components/TOC';
+import RelatedPost from '../components/RelatedPost';
 import '../styles/PostPage.css';
-import { Link } from 'react-router-dom';
 
 export default function PostPage() {
   const { id } = useParams();
   const [postInfo, setPostInfo] = useState(null);
   const { userInfo } = useContext(UserContext);
   const [tags, setTags] = useState([]);
-  const [postContent, setPostContent] = useState("");
+  const [postContent, setPostContent] = useState('');
   const [comments, setComments] = useState([]);
-
-  // Nuevo estado para controlar los datos del formulario de comentario
+  const [relatedPosts, setRelatedPosts] = useState([]);
   const [newCommentData, setNewCommentData] = useState({
-    autor: "",
-    contenido: "",
+    autor: '',
+    contenido: '',
   });
 
   useEffect(() => {
-    // Obtener los detalles del post, los tags asociados al post y los comentarios
     Promise.all([
-      fetch(`${process.env.REACT_APP_URL}/post/${id}`).then((response) =>
-        response.json()
-      ),
-      fetch(`${process.env.REACT_APP_URL}/tags`, {
-        credentials: "include",
-      }).then((response) => response.json()),
-      fetch(`${process.env.REACT_APP_URL}/post/${id}/comments`).then((response) =>
-        response.json()
-      ),
+      fetch(`${process.env.REACT_APP_URL}/post/${id}`).then((response) => response.json()),
+      fetch(`${process.env.REACT_APP_URL}/tags`, { credentials: 'include' }).then((response) => response.json()),
+      fetch(`${process.env.REACT_APP_URL}/post/${id}/comments`).then((response) => response.json()),
+      fetch(`${process.env.REACT_APP_URL}/post/${id}/related`).then((response) => response.json()),
     ])
-      .then(([postInfo, tagsData, commentsData]) => {
+      .then(([postInfo, tagsData, commentsData, relatedPostsData]) => {
         setPostInfo(postInfo);
         setTags(tagsData);
-
-        // Verifica si los comentarios se recibieron correctamente como un array
-        if (Array.isArray(commentsData)) {
-          setComments(commentsData);
-        } else {
-          console.error("Error: Los comentarios no se recibieron como un array.");
-        }
-
+        setComments(commentsData);
         setPostContent(postInfo.content);
+        setRelatedPosts(relatedPostsData);
       })
       .catch((error) => {
-        console.error("Error fetching post, tags, and comments:", error);
+        console.error('Error fetching post, tags, and comments:', error);
       });
   }, [id]);
 
@@ -58,25 +45,26 @@ export default function PostPage() {
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
-    // Enviar los datos del nuevo comentario al backend
     fetch(`${process.env.REACT_APP_URL}/post/${id}/comment`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(newCommentData),
     })
       .then((response) => response.json())
       .then((data) => {
-        // Actualizar el estado de comentarios con el nuevo comentario agregado
         setComments((prevComments) => [...prevComments, data]);
-        // Limpiar el formulario después de enviar el comentario
-        setNewCommentData({ autor: "", contenido: "" });
+        setNewCommentData({ autor: '', contenido: '' });
       })
       .catch((error) => {
-        console.error("Error adding comment:", error);
+        console.error('Error adding comment:', error);
       });
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id, postInfo]);
 
   if (!postInfo) return null;
 
@@ -96,14 +84,10 @@ export default function PostPage() {
             </Link>
           </div>
         </div>
-
       </div>
 
       <div className="toc-content">
-        <div
-          className="content"
-          dangerouslySetInnerHTML={{ __html: postInfo.content }}
-        />
+        <div className="content" dangerouslySetInnerHTML={{ __html: postInfo.content }} />
         <div className="toc-tags">
           <div className="tags">
             <strong className="related-tags">Related tags: </strong>
@@ -115,13 +99,23 @@ export default function PostPage() {
               </span>
             ))}
           </div>
-          {postContent && (<TableOfContents content={postContent} />)}
+          {postContent && <TableOfContents content={postContent} />}
         </div>
       </div>
+        <div>
+          <h2 className='RpostTitle'>Related Posts</h2>
+          <div className="related-posts-section">
 
-      {/* Agregar el apartado de comentarios */}
+
+        {relatedPosts.map((post) => (
+          <RelatedPost key={post._id} post={post} />
+        ))}
+      </div>
+        </div>
+
+
       <div className="comments-section">
-        <h2>Comentarios</h2>
+        <h2 className='CommentTitle'>Comentarios</h2>
         {comments.map((comment) => (
           <div key={comment._id} className="comment">
             <div className="comment-header">
@@ -133,7 +127,6 @@ export default function PostPage() {
         ))}
       </div>
 
-      {/* Agregar formulario para añadir comentario */}
       {userInfo && (
         <form className="comment-form" onSubmit={handleCommentSubmit}>
           <input

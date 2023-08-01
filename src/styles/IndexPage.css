@@ -126,14 +126,10 @@ div.pagination {
   width: 100px;
   height: 40px;
   margin: 7px 7px;
-
+font-family: Montserrat;
 }
 
-.paginationIcon {
-  width: 40px;
-  height: 40px;
-  stroke-width: 1.5;
-}
+
 
 @media only screen and (max-width: 1024px) {
 

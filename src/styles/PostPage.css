@@ -101,3 +101,23 @@ a {
   font-size: .8rem;
 }
 
+
+
+.related-posts-section {
+  margin-top: 40px;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-bottom: 100px;
+}
+
+h2.RpostTitle{
+  text-align: center;
+  font-family: Merriweather;
+}
+
+h2.CommentTitle{
+  font-family: Merriweather;
+  text-align: center;
+}

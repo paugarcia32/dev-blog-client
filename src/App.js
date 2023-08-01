@@ -5,14 +5,14 @@ import Contact from './pages/Contact';
 import IndexPage from './pages/IndexPage';
 import PostPage from './pages/PostPage';
 import { UserContextProvider } from './UserContext';
+import { ThemeProvider } from './common/ThemeProvider'; // Importar ThemeProvider antes de NavBar
 import Layout from './common/Layout';
 import NavBar from './common/NavBar';
-import { ThemeProvider } from './common/ThemeProvider'; // Asegúrate de importar el ThemeProvider
 
 function App() {
   return (
-    <UserContextProvider>
-      <ThemeProvider> {/* Envuelve Layout con ThemeProvider */}
+    <ThemeProvider> {/* Envuelve Layout con ThemeProvider */}
+      <UserContextProvider>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<IndexPage />} />
@@ -21,10 +21,9 @@ function App() {
             <Route path='/contact' element={<Contact />} />
           </Route>
         </Routes>
-      </ThemeProvider>
-    </UserContextProvider>
+      </UserContextProvider>
+    </ThemeProvider>
   );
 }
 
 export default App;
-
