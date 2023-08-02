@@ -34,16 +34,18 @@ export default function About(){
 
             <div className="tab-content">
               {/* About content */}
-              <div className={toggleTab === 1 ? "content active-content":"content "}>
+              <div className={toggleTab === 1 ? "about-content active-content":"about-content "}>
                 <h2>My Story</h2>
+                <div className="main-about-underline"></div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt reprehenderit dolorum assumenda mollitia at pariatur soluta asperiores id architecto molestias distinctio harum doloremque accusamus minus, tempora officia voluptas accusantium quia.</p>
                 <h3>I Am a web designer and developer with x years of experience</h3>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, officia? Dolor dolorem quasi, in facilis ea magnam veritatis cumque ratione perspiciatis modi aliquam minus quas illo natus porro magni? Optio.</p>
               </div>
 
               {/* skills content */}
-              <div className={toggleTab === 2 ? "content active-content":"content "}>
+              <div className={toggleTab === 2 ? "about-content active-content":"about-content "}>
                 <h2>Skills</h2>
+                <div className="main-about-underline"></div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt reprehenderit dolorum assumenda mollitia at pariatur soluta asperiores id architecto molestias distinctio harum doloremque accusamus minus, tempora officia voluptas accusantium quia.</p>
                 <div className="skills-row">
                   <div className="skills-column">
@@ -84,21 +86,24 @@ export default function About(){
                 </div>
               </div>
               {/* experiece content */}
-              <div className={toggleTab === 3 ? "content active-content":"content "}>
+              <div className={toggleTab === 3 ? "about-content active-content":"about-content "}>
                 <div className="exp-column">
                   <h3>Web Developer</h3>
+                  <div className="main-about-underline"></div>
                   <span>2014-2022</span>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eaque est iure nemo? Officiis magnam culpa totam ea repellat iure, mollitia pariatur exercitationem consectetur! Ipsa dolores explicabo molestiae veniam omnis.</p>
                 </div>
 
                 <div className="exp-column">
                   <h3>Graphic dessigner</h3>
+                  <div className="main-about-underline"></div>
                   <span>2014-2022</span>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eaque est iure nemo? Officiis magnam culpa totam ea repellat iure, mollitia pariatur exercitationem consectetur! Ipsa dolores explicabo molestiae veniam omnis.</p>
                 </div>
 
                 <div className="exp-column">
                   <h3>Photoshop</h3>
+                  <div className="main-about-underline"></div>
                   <span>2014-2022</span>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eaque est iure nemo? Officiis magnam culpa totam ea repellat iure, mollitia pariatur exercitationem consectetur! Ipsa dolores explicabo molestiae veniam omnis.</p>
                 </div>

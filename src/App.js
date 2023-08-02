@@ -8,6 +8,10 @@ import { UserContextProvider } from './UserContext';
 import { ThemeProvider } from './common/ThemeProvider'; // Importar ThemeProvider antes de NavBar
 import Layout from './common/Layout';
 import NavBar from './common/NavBar';
+import { FAQ } from './pages/FAQ';
+import TermsAndConditions from './pages/TermsAndConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Resources from './pages/Resources';
 
 function App() {
   return (
@@ -19,6 +23,10 @@ function App() {
             <Route path='/post/:id' element={<PostPage />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/FAQ' element={<FAQ />} />
+            <Route path='/TermsAndConditions' element={<TermsAndConditions />} />
+            <Route path='/PrivacyPolicy' element={<PrivacyPolicy />} />
+            <Route path='/Resources' element={<Resources />} />
           </Route>
         </Routes>
       </UserContextProvider>

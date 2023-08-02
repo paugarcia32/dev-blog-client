@@ -26,11 +26,11 @@ export default function Footer() {
           </div>
           <div className="footer-links-div">
             <h4>The project</h4>
-            <Link to={'/employer'}>
-              <p>About</p>
-            </Link>
-            <Link to={'/employer'}>
+            <Link to={'/'}>
               <p>Home</p>
+            </Link>
+            <Link to={'/about'}>
+              <p>About</p>
             </Link>
             <Link to={'/employer'}>
               <p>Author rights</p>
@@ -41,23 +41,23 @@ export default function Footer() {
             <Link to={'/employer'}>
               <p>Creator</p>
             </Link>
-            <Link to={'/employer'}>
+            <Link to={'/Resources'}>
               <p>Resources</p>
             </Link>
-            <Link to={'/employer'}>
+            <Link to={'/FAQ'}>
               <p>FAQ</p>
             </Link>
           </div>
           <div className="footer-links-div">
             <h4>Support</h4>
-            <Link to={'/employer'}>
+            <Link to={'/contact'}>
               <p>Contact</p>
             </Link>
-            <Link to={'/employer'}>
-              <p>Terms of Use</p>
+            <Link to={'/TermsAndConditions'}>
+              <p>Terms and Conditions</p>
             </Link>
-            <Link to={'/employer'}>
-              <p>Privacy pollicy</p>
+            <Link to={'/PrivacyPolicy'}>
+              <p>Privacy policy</p>
             </Link>
           </div>
         </div>

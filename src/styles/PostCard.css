@@ -13,16 +13,25 @@ div.post {
 }
 
 div.post:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); */
+  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+      /* 2. shadow ring 👇 */
+      0 0 0 1px hsla(230, 13%, 9%, 0.075),
+      /* 3. multiple soft shadows 👇 */
+      0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+      0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+      0 3.5px 6px hsla(230, 13%, 9%, 0.09);
   transform: translateY(-2px);
   transform: translateX(-2px);
 }
 
 div.post div.texts {
   flex: 1;
+  margin: 0;
+    /* Ajusta el valor según tus preferencias */
+  font-size: 1.8rem;
+
 }
-
-
 
 div.post img {
   flex: 0 0 auto;
@@ -40,20 +49,19 @@ h2.title{
     margin-bottom: 0px;
 }
 
-div.post div.texts {
-  margin: 0;
-    /* Ajusta el valor según tus preferencias */
-  font-size: 1.8rem
-}
+
 
 div.info{
-  font-family: OpenSansBold;
+  font-family: Montserrat;
+    margin: 6px 0;
+      color: var(--text-dim);
+      font-size: 0.7rem;
+      font-weight: bold;
+      display: flex;
+      gap: 10px;
 }
-
-
-div.post p.info a.author {
-  color: inherit;
-
+div.post .author{
+  font-size: 0.7rem;
 }
 
 div.post p.summary {
@@ -61,6 +69,7 @@ div.post p.summary {
   line-height: 1rem;
   font-size: 1rem;
   font-family: OpenSans;
+  color: var(--text);
 }
 div.post div.texts .info {
   margin: 6px 0;
@@ -71,17 +80,14 @@ div.post div.texts .info {
   gap: 10px;
 }
 
-div.post div.texts .info a.author {
-  color: inherit;
-}
 
-div.post div.texts .tags-post {
+/* div.post div.texts .tags-post {
   color: var(--text-dim);
   font-size: 0.7rem;
   font-weight: bold;
   display: flex;
   gap: 10px;
-}
+} */
 
 div.texts a {
   text-decoration: none;
@@ -111,7 +117,13 @@ img {
     }
 
     div.post:hover {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+          /* 2. shadow ring 👇 */
+          0 0 0 1px hsla(230, 13%, 9%, 0.075),
+          /* 3. multiple soft shadows 👇 */
+          0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+          0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+          0 3.5px 6px hsla(230, 13%, 9%, 0.09);
       transform: translateY(-2px);
       transform: translateX(-2px);
     }
@@ -147,9 +159,6 @@ img {
       gap: 10px;
     }
 
-    div.post div.texts .info a.author {
-      color: inherit;
-    }
 
     div.post div.texts .tags-post {
       color: var(--text-dim);

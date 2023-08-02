@@ -53,11 +53,22 @@ function TableOfContents({ content }) {
           <h2>Table of Contents</h2>
           <ul>
             {headings.map((heading, index) => (
+              // <li
+              //   key={index}
+              //   style={{ marginLeft: getIndentation(heading.level) }}
+              //   className={`heading-level-${heading.level} ${
+              //     index === activeHeadingIndex ? "active-heading" : ""
+              //   }`}
+              // >
+              //   <a href="#!" onClick={() => handleHeadingClick(index)}>
+              //     {heading.text}
+              //   </a>
+              // </li>
               <li
                 key={index}
                 style={{ marginLeft: getIndentation(heading.level) }}
                 className={`heading-level-${heading.level} ${
-                  index === activeHeadingIndex ? "active-heading" : ""
+                  index === activeHeadingIndex ? "active" : ""
                 }`}
               >
                 <a href="#!" onClick={() => handleHeadingClick(index)}>

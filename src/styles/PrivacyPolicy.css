@@ -1,0 +1,70 @@
+.privacy-policy-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  /* font-family: Arial, sans-serif; */
+  line-height: 1.6;
+}
+
+.privacy-policy-container h1 {
+  color: var(--text);
+  font-size: 36px;
+  /* Aumentamos el tamaño del título */
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: MerriweatherBold;
+  white-space: nowrap;
+  /* Evita que el título se rompa en varias líneas */
+  overflow: hidden;
+  /* Oculta el texto que no quepa en el contenedor */
+  text-overflow: ellipsis;
+  /* Muestra puntos suspensivos al final del título truncado */
+}
+
+.main-title-underline {
+  width: 80px;
+  text-align: left;
+  height: 0.15rem;
+  background: var(--accent);
+  /* Cambiado al color de acento */
+  margin-bottom: 20px;
+}
+
+.privacy-policy-container h2 {
+  color: var(--text);
+  font-family: Merriweather;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.privacy-policy-container p {
+  color: var(--text);
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: OpenSans;
+}
+
+.privacy-policy-container a {
+  color: var(--accent);
+  text-decoration: underline;
+  font-family: Montserrat;
+}
+
+.privacy-policy-container a:hover {
+  text-decoration: none;
+}
+
+.privacy-policy-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-family: OpenSans;
+}
+
+.privacy-policy-container li {
+  color: var(--text);
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-family: OpenSans;
+}

@@ -1,4 +1,4 @@
-
+/*
 .table-of-contents {
   background-color: var(--background);
 }
@@ -34,4 +34,58 @@
 .heading-level-3 {
   font-size: .7em;
   margin-left: 40px;
+} */
+
+
+/* TOC.css */
+.table-of-contents {
+  background-color: var(--background);
+}
+
+.table-of-contents h2 {
+  margin-bottom: 10px;
+  font-size: 1em;
+  font-family: 'Merriweather', serif;
+}
+
+.table-of-contents ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.table-of-contents li {
+  margin-bottom: 10px; /* Aumenta el margen inferior */
+}
+
+.table-of-contents a {
+  text-decoration: none;
+  color: var(--text);
+  font-family: 'OpenSans', sans-serif;
+  transition: color 0.3s ease; /* Agrega una transición de color */
+}
+
+.table-of-contents a.active {
+  color: var(--accent); /* Color de enlace activo */
+  font-weight: bold; /* Texto en negrita para resaltar */
+}
+
+.table-of-contents a:hover {
+  color: var(--accent); /* Cambia el color al pasar el cursor por encima */
+}
+
+.heading-level-1 {
+  font-size: 0.9em;
+  font-family: 'OpenSansItalic', sans-serif;
+}
+
+.heading-level-2 {
+  font-size: 0.8em;
+  margin-left: 20px;
+  font-family: 'OpenSansItalic', sans-serif;
+}
+
+.heading-level-3 {
+  font-size: 0.7em;
+  margin-left: 40px;
+  font-family: 'OpenSansItalic', sans-serif;
 }

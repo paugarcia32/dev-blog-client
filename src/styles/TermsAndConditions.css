@@ -1,0 +1,42 @@
+/* Terms and Conditions Page Styles */
+.terms-page {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-title {
+  margin: 20px 0 10px 0;
+  text-align: left;
+  font-weight: 500;
+  font-family: MerriweatherBold;
+}
+
+.main-title-underline {
+  width: 80px;
+  text-align: left;
+  height: 0.15rem;
+  background: var(--accent);
+  /* Changed to accent color */
+  margin-bottom: 20px;
+}
+
+.terms-content {
+  font-size: 1rem;
+}
+
+.terms-content h2 {
+  margin: 20px 0;
+  font-family: OpenSansBold;
+}
+
+.terms-content p {
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-family: OpenSans;
+}
+
+.terms-content ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
