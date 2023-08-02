@@ -4,6 +4,7 @@
 
 .footer{
   background-color: var(--secondary);
+
 }
 .sb_footer{
   display: flex;
@@ -15,7 +16,7 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   width: 100%;
   text-align: left;
   margin-bottom: 2rem;
@@ -45,4 +46,17 @@ div.footer-links h4{
 
 .footer-links-div img{
   padding-top: 15px;
+}
+
+@media screen and (max-width: 776px) {
+
+  /* Set flex-wrap to wrap on screens with max-width 776px */
+  .footer-links {
+    flex-wrap: wrap;
+  }
+
+  /* Adjust width to occupy 50% of the width on screens with max-width 776px */
+  .footer-links-div {
+    width: 50%;
+  }
 }

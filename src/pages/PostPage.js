@@ -87,7 +87,7 @@ export default function PostPage() {
       </div>
 
       <div className="toc-content">
-        <div className="content" dangerouslySetInnerHTML={{ __html: postInfo.content }} />
+
         <div className="toc-tags">
           <div className="tags">
             <strong className="related-tags">Related tags: </strong>
@@ -98,19 +98,18 @@ export default function PostPage() {
                 {index !== postInfo.tag.length - 1 && ', '}
               </span>
             ))}
-          </div>
-          {postContent && <TableOfContents content={postContent} />}
+            </div>
+              {postContent && <TableOfContents content={postContent} />}
+            </div>
+            <div className="content" dangerouslySetInnerHTML={{ __html: postInfo.content }} />
         </div>
-      </div>
         <div>
           <h2 className='RpostTitle'>Related Posts</h2>
           <div className="related-posts-section">
-
-
-        {relatedPosts.map((post) => (
-          <RelatedPost key={post._id} post={post} />
-        ))}
-      </div>
+            {relatedPosts.map((post) => (
+            <RelatedPost key={post._id} post={post} />
+            ))}
+          </div>
         </div>
 
 

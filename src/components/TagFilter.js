@@ -1,29 +1,22 @@
 import React from "react";
-// import "./TagFilter.css";
+import DropdownSelect from "react-dropdown-select";
+
 
 export default function TagFilter({ tags, selectedTags, handleClearFilter, handleChange }) {
   return (
-    <div className="tagFilter">
-      <h3 className="tagTitle">Tags</h3>
+    <div className="tag-filter-container">
+      <h3 className="tag-filter-title">Filter tags</h3>
       <div className="main-title-underline"></div>
-      <select
-        id="tags"
-        multiple
-        value={selectedTags}
-        onChange={(ev) => handleChange(ev.target.options)}
-        className="tagsSelect"
-      >
-
-        {tags.map((tag) => (
-          <option key={tag._id} value={tag._id} className="tagOption">
-            {tag.title}
-          </option>
-        ))}
-
-      </select>
-      <button className="filterButton" onClick={handleClearFilter}>
+      <DropdownSelect
+        options={tags.map((tag) => ({ label: tag.title, value: tag._id }))}
+        multi
+        values={selectedTags}
+        onChange={(values) => handleChange(values)}
+        className="tag-select"
+      />
+      {/* <button className="clear-filter-button" onClick={handleClearFilter}>
         Clear filter
-      </button>
+      </button> */}
     </div>
   );
 }

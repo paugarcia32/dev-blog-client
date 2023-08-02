@@ -93,33 +93,36 @@ export default function IndexPage() {
 
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
-  const handleChange = (options) => {
-    const selectedOptions = Array.from(options)
-      .filter((option) => option.selected)
-      .map((option) => option.value);
+  const handleChange = (selectedList) => {
+    const selectedOptions = selectedList.map((item) => item.value);
     setSelectedTags(selectedOptions);
   };
 
-
-  return (
+ return (
     <div className="index-page">
-      <SearchBar search={search} setSearch={setSearch}/>
-
       <div className="layout">
-        <DisplayPosts  posts={currentPosts} className="display"/>
-        <TagFilter
-          tags={tags}
-          selectedTags={selectedTags}
-          handleClearFilter={handleClearFilter}
-          handleChange={handleChange}
-        />
+        <div>
+          <SearchBar search={search} setSearch={setSearch} />
+          <TagFilter
+            tags={tags}
+            selectedTags={selectedTags}
+            handleClearFilter={handleClearFilter}
+            handleChange={handleChange}
+          />
+        </div>
+        {/* Columna izquierda */}
+        <div>
+          <DisplayPosts posts={currentPosts} className="display" />
+        </div>
+        {/* Columna derecha */}
+
       </div>
       <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          handlePrevPage={handlePrevPage}
-          handleNextPage={handleNextPage}
-        />
+        currentPage={currentPage}
+        totalPages={totalPages}
+        handlePrevPage={handlePrevPage}
+        handleNextPage={handleNextPage}
+      />
     </div>
   );
 }

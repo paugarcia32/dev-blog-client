@@ -9,7 +9,7 @@ div.post {
   transition: box-shadow 0.3s, transform 0.3s;
   height: 150px;
   overflow: hidden;
-  width: 800px;
+  max-width: 800px;
 }
 
 div.post:hover {
@@ -81,13 +81,6 @@ div.post div.texts .info {
 }
 
 
-/* div.post div.texts .tags-post {
-  color: var(--text-dim);
-  font-size: 0.7rem;
-  font-weight: bold;
-  display: flex;
-  gap: 10px;
-} */
 
 div.texts a {
   text-decoration: none;
@@ -100,7 +93,7 @@ img {
   border-radius: 8px 8px 0 0;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 767px) {
   div.post {
       display: flex;
       flex-direction: column;
@@ -113,7 +106,8 @@ img {
       transition: box-shadow 0.3s, transform 0.3s;
       height: auto;
       overflow: hidden;
-      width: 600px;
+      max-width: 600px;
+      margin: 25px auto;
     }
 
     div.post:hover {

@@ -1,99 +1,123 @@
 .layout {
   display: grid;
-  grid-template-columns: 5fr .5fr;
+  grid-template-columns: 1fr 5fr;
   gap: 20px;
   color: var(--text);
 }
 
-
-select {
-  appearance: none !important;
-  background-color: var(--secondary);
-  background: var(--secondary);
-  color-interpolation-filters: var(--secondary);
-  color: var(--text);
-  border:1px;
-  padding: 0 1em 0 0;
-  margin: 15px 15px;
-  font-family: Montserrat;
-  font-size: inherit !important;
-  cursor: pointer;
-  line-height: inherit !important;
-}
-
-select:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-
-
-.tagFilter {
-  background-color: var(--secondary);
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s, transform 0.3s;
-  margin-bottom: 30px;
-  text-align: center;
-  padding: 20px;
-}
-
-.tagTitle {
-  color: var(--text);
-  font-size: 24px;
-  font-weight: bold;
-  font-family: Merriweather;
+/* Estilos para el componente TagFilter */
+.tag-filter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
+  border-radius: 15px;
 }
 
-/* .main-title-underline {
-  width: 80px;
-  text-align: center;
-  height: 0.15rem;
+.tag-filter-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+.tag-select {
+  background: var(--secondary);
+  /* border: #333 !important; */
+  color: var(--text);
+  border-radius: 15px;
+}
+
+.tag-select .react-dropdown{
+  border-radius: 15px;
+}
+
+.tag-select .react-dropdown-select-clear,
+.tag-select .react-dropdown-select-dropdown-handle {
+  color: var(--text);
+}
+
+.tag-select .react-dropdown-select-option {
+  border: 1px solid #fff;
+}
+
+.tag-select .react-dropdown-select-item {
+  color: var(--accent);
+}
+
+.tag-select .react-dropdown-select-input {
+  color: var(--text);
+}
+
+.tag-select .react-dropdown-select-dropdown {
+  position: absolute;
+  left: 0;
+  border: none;
+  width: 100px;
+  /* Ajusta el ancho del dropdown según tus necesidades */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  max-height: 300px;
+  overflow: auto;
+  z-index: 9;
   background: var(--accent);
-  margin: 0 auto 20px auto;
-} */
+  box-shadow: none;
+  color: var(--accent) !important;
+}
 
-.tagsSelect {
-  appearance: none !important;
-  background-color: var(--secondary);
+
+
+.tag-select .react-dropdown-select-item {
   color: var(--text);
+  border-bottom: 1px solid var(--accent);
+
+  :hover {
+    color: #ffffff80;
+  }
+}
+
+.tag-select .react-dropdown-select-item.react-dropdown-select-item-selected,
+.tag-select .react-dropdown-select-item.react-dropdown-select-item-active {
+  border-bottom: 1px solid #333;
+  color: #fff;
+  font-weight: bold;
+}
+
+.tag-select .react-dropdown-select-item.react-dropdown-select-item-disabled {
+  background: #777;
+  color: #ccc;
+}
+
+
+
+
+.clear-filter-button {
+  background-color: #0077ff;
+  color: #fff;
   border: none;
-  /* padding: 5px 10px; */
-  font-family: Montserrat;
-  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  width: 100%;
-  padding-left: 0px;
+  margin-top: 10px;
 }
 
-.tagsSelect:focus {
-  outline: none;
+.clear-filter-button:hover {
+  background-color: #005ec1;
 }
 
-.tagOption {
-  color: var(--text);
-  background-color: var(--secondary);
-}
 
-.filterButton {
-  color: var(--text);
-  background-color: var(--secondary);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: Montserrat;
-  font-size: 16px;
-  padding: 8px 16px;
-  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-}
+/* sssssssssssssssssssssssssssssssssssssssssssssssss */
 
-.filterButton:hover {
-  background-color: var(--accent);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
+/* TagFilter.css */
+
+/* TagFilter.css */
+
+
+
+
+
+/* aaaaaaaaaaaaaaaaaaaaa */
 
 div.index-page div.main-title-underline {
   width: 100%;
@@ -115,8 +139,8 @@ div.index-page div.main-title-underline {
 
 .searchBar form {
   background-color: var(--secondary);
-  border-radius: 20px;
-  padding: 10px 20px;
+  border-radius: 15px;
+  padding: 5px 5px;
   color: var(--text);
   font-family: OpenSansItalic;
 }
@@ -135,7 +159,7 @@ div.index-page div.main-title-underline {
   border: none;
   background-color: transparent;
   outline: none;
-  width: 300px;
+  width: 200px;
   font-size: 16px;
   padding: 5px;
   color: var(--text);
@@ -147,6 +171,10 @@ div.index-page div.main-title-underline {
   color: var(--text);
   font-family: OpenSansItalic;
 }
+
+
+
+
 
 div.pagination {
   display: flex;
@@ -190,7 +218,7 @@ font-family: Montserrat;
 
 
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 767px) {
 
 
     div.index-page {
@@ -199,13 +227,14 @@ font-family: Montserrat;
 
     .layout {
       display: grid;
-      grid-template-columns: 5fr .5fr;
+      grid-template-columns: 1fr;
       gap: 20px;
       color: var(--text);
-      width: auto;
+      min-width: 300px;
+      margin: 30px;
       /* align-items: center; */
     }
-  .searchBar {
+    .searchBar {
       display: flex;
       justify-content: center;
       margin-top: 20px;
@@ -237,6 +266,14 @@ font-family: Montserrat;
       color: var(--text-accent);
       color: var(--text);
       font-family: OpenSansItalic;
+    }
+
+    .footer{
+      margin-top:55%;
+    }
+
+    .pagination{
+      margin-bottom: 1000px;
     }
 
 
