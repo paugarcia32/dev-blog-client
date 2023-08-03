@@ -1,13 +1,10 @@
 import React from "react";
 import "../styles/TermsAndConditions.css";
+import TableOfContents from '../components/TOC2';
 
 const TermsAndConditions = () => {
-  return (
-    <div className="terms-page">
-      <h1 className="main-title">Terms and Conditions</h1>
-      <div className="main-title-underline"></div>
-      <div className="terms-content">
-        <p>
+   const pageContent = `
+    <p>
           Welcome to My Dev Journey! These terms and conditions outline the
           rules and regulations for the use of My Dev Journey's Website,
           located at www.mydevjourney.com.
@@ -263,7 +260,15 @@ const TermsAndConditions = () => {
           website are provided free of charge, we will not be liable for any
           loss or damage of any nature.
         </p>
-      </div>
+  `;
+  return (
+    <div className="terms-page">
+      <h1 className="main-title">Terms and Conditions</h1>
+      <div className="main-title-underline"></div>
+      <TableOfContents content={pageContent} />
+      <div className="terms-content" dangerouslySetInnerHTML={{ __html: pageContent }}/>
+
+
     </div>
   );
 };

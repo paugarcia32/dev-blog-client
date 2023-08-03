@@ -20,11 +20,8 @@ div.toc-tags {
 
 div.content {
   flex: 1;
-  /* Utilizamos flex para que ocupe el espacio restante */
   line-height: 1.6;
 }
-
-
 
 
 div.headers {
@@ -68,7 +65,8 @@ div.post-page p{
   border: 1px solid #ccc;
   border-radius: 20px;
   background-color: var(--secondary);
-  min-width: 100vh;
+  max-width: 960px;
+  min-width: 767px;
 }
 
 .comment-header {
@@ -91,7 +89,8 @@ div.post-page p{
 .comment-form textarea,
 .comment-form button {
   display: block;
-  width: 100%;
+  max-width: 960px;
+  min-width: 767px;
   margin-bottom: 10px;
   padding: 12px;
   font-size: 16px;
@@ -106,20 +105,22 @@ div.post-page p{
 }
 
 .comment-form button {
-  background-color: var(--accent);
-  color: #fff;
+  background-color: var(--text);
+  color: var(--text-accent);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .comment-form button:hover {
-  background-color: #0056b3;
+  background-color: var(--accent);
 }
 
 .comment-time {
   color: var(--text-dim);
   font-size: 0.8rem;
 }
+
+
 
 .related-posts-section {
   margin-top: 40px;
@@ -128,6 +129,15 @@ div.post-page p{
   gap: 20px;
   margin-bottom: 100px;
 }
+
+@media only screen and (max-width: 992px) {
+
+  /* Cambiar a 3 columnas en pantallas más pequeñas */
+  .related-posts-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 
 
 h2.RpostTitle {
@@ -185,94 +195,89 @@ h2.CommentTitle {
 @media only screen and (max-width: 767px) {
   div.post-page {
     flex-direction: column;
-    /* Cambiar la dirección de la flexbox para apilar los elementos */
   }
 
   div.toc-content {
     flex-direction: column;
-    /* Cambiar la dirección de la flexbox para apilar los elementos */
   }
 
   div.toc-tags {
     width: 100%;
-    /* Ajustar el ancho para ocupar toda la columna */
     margin-top: 0;
-    /* Eliminar el margen superior para acercar al contenido */
     margin-bottom: 20px;
-    /* Añadir un margen inferior para separar del contenido */
   }
 
   div.content {
     line-height: 1.6;
   }
 
-    .related-posts-section {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 20px;
-      margin-bottom: 100px;
-    }
+  .related-posts-section {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-bottom: 100px;
+  }
 
 
-        .comment {
-          margin-bottom: 20px;
-          padding: 20px;
-          border: 1px solid #ccc;
-          border-radius: 20px;
-          background-color: var(--secondary);
-          min-width: 40rem;
+  .comment {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: var(--secondary);
+    min-width: 40rem;
 
-        }
+  }
 
-        .comment-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          font-weight: bold;
-          margin-bottom: 5px;
-        }
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 
-        .comment-content {
-          margin-bottom: 10px;
-        }
+  .comment-content {
+    margin-bottom: 10px;
+  }
 
-        .comment-form {
-          margin-top: 20px;
-        }
+  .comment-form {
+    margin-top: 20px;
+  }
 
-        .comment-form input,
-        .comment-form textarea,
-        .comment-form button {
-          display: block;
-          min-width: 40rem;
-          margin-bottom: 10px;
-          padding: 12px;
-          font-size: 16px;
-          border: 1px solid #ccc;
-          border-radius: 20px;
-          background-color: var(--secondary);
-          color: var(--text);
-        }
+  .comment-form input,
+  .comment-form textarea,
+  .comment-form button {
+    display: block;
+    min-width: 40rem;
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: var(--secondary);
+    color: var(--text);
+  }
 
-        .comment-form textarea {
-          resize: vertical;
-        }
+  .comment-form textarea {
+    resize: vertical;
+  }
 
-        .comment-form button {
-          background-color: var(--accent);
-          color: #fff;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-        }
+  .comment-form button {
+    background-color: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-        .comment-form button:hover {
-          background-color: #0056b3;
-        }
+  .comment-form button:hover {
+    background-color: #0056b3;
+  }
 
-        .comment-time {
-          color: var(--text-dim);
-          font-size: 0.8rem;
-        }
+  .comment-time {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
 
 }

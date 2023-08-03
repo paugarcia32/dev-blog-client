@@ -1,6 +1,5 @@
-import '../styles/TOC.css'
-
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import "../styles/TOC.css";
 
 function TableOfContents({ content }) {
   const [headings, setHeadings] = useState([]);
@@ -32,7 +31,7 @@ function TableOfContents({ content }) {
 
     // Buscar el texto del encabezado en el contenido
     const headingText = headings[index].text;
-    const contentDiv = document.querySelector(".content");
+    const contentDiv = document.querySelector(".terms-content");
 
     // Buscar el párrafo que contiene el texto del encabezado y realizar el desplazamiento suave
     if (contentDiv) {

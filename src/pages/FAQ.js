@@ -6,7 +6,7 @@ export const FAQ = () => {
   return (
     <div>
       <div>
-        <h3 className="main-title">Most asked questions</h3>
+        <h3 className="main-title">Frequently Asked Questions</h3>
         <div className="main-title-underline"></div>
         {data.map((section, index) => (
           <Accordion className='accordion' key={index} section={section} />

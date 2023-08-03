@@ -12,11 +12,8 @@ export default function TagFilter({ tags, selectedTags, handleClearFilter, handl
         multi
         values={selectedTags}
         onChange={(values) => handleChange(values)}
-        className="tag-select"
+        className="tag-select custom-dropdown-select"
       />
-      {/* <button className="clear-filter-button" onClick={handleClearFilter}>
-        Clear filter
-      </button> */}
     </div>
   );
 }

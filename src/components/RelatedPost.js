@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatISO9075 } from 'date-fns';
+import { formatISO9075, format } from 'date-fns';
 import { Link } from 'react-router-dom'; // Import the Link component
 import '../styles/RelatedPost.css';
 
@@ -18,9 +18,10 @@ const RelatedPost = ({ post }) => {
         <Link to={`/post/${post._id}`} className="author">
         {post.author.username}
         </Link>
-        <time className="date">{formatISO9075(new Date(post.createdAt))}</time>
+        <br />
+        <time className="date">{format(new Date(post.createdAt), 'MMM d, yyyy')}</time>
         <div className="tags">
-          <strong>Tags: </strong>
+          {/* <strong>Tags: </strong> */}
           {post.tag.map((associatedTag, index) => (
             <span key={associatedTag._id} className="tag">
               {associatedTag.title}

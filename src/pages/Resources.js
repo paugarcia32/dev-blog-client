@@ -1,16 +1,14 @@
 import React from 'react';
 import '../styles/Resources.css';
 import mernImage from '../Assets/MERN.png';
+import TableOfContents from '../components/TOC2';
 
 const Resources = () => {
-  return (
-    <div className="resources-container">
-      <h1>Resources</h1>
-      <div className="main-title-underline"></div>
-      <p>
+  const pageContent = `
+    <p>
         In this project, we have used the MERN Stack, following the SOLID principles, and implementing TypeScript in both the frontend and backend.
       </p>
-      <img src={mernImage} alt="MERN Stack" className="mern-image" />
+      <img src="${mernImage}" alt="MERN Stack" className="mern-image" />
       <p>
         The MERN Stack consists of the following technologies:
       </p>
@@ -33,6 +31,15 @@ const Resources = () => {
       <p>
         Finally, TypeScript has been used in both the frontend and backend to add static typing to JavaScript, which helps in catching errors early and improving code quality.
       </p>
+  `;
+
+  return (
+    <div className="resources-container">
+      <h1>Resources</h1>
+      <div className="main-title-underline"></div>
+
+      <TableOfContents content={pageContent} />
+      <div className="terms-content" dangerouslySetInnerHTML={{ __html: pageContent }} />
     </div>
   );
 };

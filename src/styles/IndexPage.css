@@ -1,35 +1,19 @@
 .index-page {
-  /* min-height: 100vh;  */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* .layout {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  gap: 20px;
-  color: var(--text);
-} */
-
 
 .layout {
   flex: 1;
   display: flex;
-  /* flex-direction: column; */
   gap: 20px;
   color: var(--text);
 }
 
-/* .sidebar {
-  flex: 1;
-}
 
-.main-content {
-  flex: 5;
-} */
 
-/* Estilos para el componente TagFilter */
 .tag-filter-container {
   display: flex;
   flex-direction: column;
@@ -46,8 +30,7 @@
 
 .tag-select {
   background: var(--secondary);
-  /* border: #333 !important; */
-  color: var(--text);
+  color: var(--text-accent);
   border-radius: 15px;
 }
 
@@ -61,23 +44,26 @@
 }
 
 .tag-select .react-dropdown-select-option {
-  border: 1px solid #fff;
+  border: 1px solid var(--text-accent);
+  /* border-radius: 15px; */
 }
 
 .tag-select .react-dropdown-select-item {
-  color: var(--accent);
+  color: var(--secondary);
+  /* border-radius: 15px; */
 }
 
 .tag-select .react-dropdown-select-input {
   color: var(--text);
+  width: 150px;
+  /* border-radius: 15px; */
 }
 
 .tag-select .react-dropdown-select-dropdown {
   position: absolute;
   left: 0;
   border: none;
-  width: 100px;
-  /* Ajusta el ancho del dropdown según tus necesidades */
+  width: 150px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -87,15 +73,15 @@
   z-index: 9;
   background: var(--accent);
   box-shadow: none;
-  color: var(--accent) !important;
+  color: var(--text-accent) !important;
 }
 
 
 
 .tag-select .react-dropdown-select-item {
-  color: var(--text);
-  border-bottom: 1px solid var(--accent);
-
+  color: var(--text-accent);
+  border-bottom: 1px solid var(--text-accent);
+  font-family: OpenSans;
   :hover {
     color: #ffffff80;
   }
@@ -103,14 +89,14 @@
 
 .tag-select .react-dropdown-select-item.react-dropdown-select-item-selected,
 .tag-select .react-dropdown-select-item.react-dropdown-select-item-active {
-  border-bottom: 1px solid #333;
-  color: #fff;
+  border-bottom: 1px solid var(--background);
+  color: var(--text-accent);
   font-weight: bold;
 }
 
 .tag-select .react-dropdown-select-item.react-dropdown-select-item-disabled {
-  background: #777;
-  color: #ccc;
+  background: var(--background);
+  color: var(--accent);
 }
 
 

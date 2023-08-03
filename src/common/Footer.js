@@ -34,15 +34,9 @@ export default function Footer() {
             <Link to={'/about'}>
               <p>About</p>
             </Link>
-            <Link to={'/employer'}>
-              <p>Author rights</p>
-            </Link>
           </div>
           <div className="footer-links-div">
             <h4>Learn more</h4>
-            <Link to={'/employer'}>
-              <p>Creator</p>
-            </Link>
             <Link to={'/Resources'}>
               <p>Resources</p>
             </Link>

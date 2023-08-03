@@ -30,6 +30,7 @@ export default function NavBar() {
         <FaBars />
       </button>
       <nav className="links-nav" ref={navRef}>
+      {/* <nav className={`links-nav ${theme === "dark" ? "responsive_nav" : ""}`} ref={navRef}> */}
         <ul>
           <li>
             <CustomLink to="/contact">Contact</CustomLink>

@@ -6,6 +6,12 @@
   background-color: var(--secondary);
 
 }
+
+.footer a{
+  text-decoration: none;
+  color: var(--text);
+  font-family: 'Montserrat';
+}
 .sb_footer{
   display: flex;
   flex-direction: column;
@@ -50,12 +56,10 @@ div.footer-links h4{
 
 @media screen and (max-width: 776px) {
 
-  /* Set flex-wrap to wrap on screens with max-width 776px */
   .footer-links {
     flex-wrap: wrap;
   }
 
-  /* Adjust width to occupy 50% of the width on screens with max-width 776px */
   .footer-links-div {
     width: 50%;
   }
