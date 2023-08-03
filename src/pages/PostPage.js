@@ -5,6 +5,8 @@ import { UserContext } from '../UserContext';
 import TableOfContents from '../components/TOC';
 import RelatedPost from '../components/RelatedPost';
 import '../styles/PostPage.css';
+import { ThemeProvider } from '../common/ThemeProvider';
+
 
 export default function PostPage() {
   const { id } = useParams();
@@ -69,6 +71,7 @@ export default function PostPage() {
   if (!postInfo) return null;
 
   return (
+    <>
     <div className="post-page">
       <div className="image">
         <img src={`${process.env.REACT_APP_URL}/${postInfo.cover}`} alt="" />
@@ -147,5 +150,6 @@ export default function PostPage() {
         </form>
       )}
     </div>
+    </>
   );
 }

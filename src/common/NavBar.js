@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../styles/NavBar.css";
-import { useTheme } from "../common/ThemeProvider.js";
+import { ThemeProvider, useTheme } from "../common/ThemeProvider.js";
+
 
 export default function NavBar() {
   const { theme, toggleTheme } = useTheme(); // Suscribir el NavBar al contexto del tema
@@ -51,10 +52,12 @@ function CustomLink({ to, children, ...props }) {
   const isActive = useMatch({ path: resolvePath.pathname, end: true });
 
   return (
+    // <ThemeProvider>
     <li className={isActive ? "active" : ""}>
       <Link to={to} {...props}>
         {children}
       </Link>
     </li>
+    // </ThemeProvider>
   );
 }
