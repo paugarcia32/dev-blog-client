@@ -1,9 +1,33 @@
-.layout {
+.index-page {
+  /* min-height: 100vh;  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .layout {
   display: grid;
   grid-template-columns: 1fr 5fr;
   gap: 20px;
   color: var(--text);
+} */
+
+
+.layout {
+  flex: 1;
+  display: flex;
+  /* flex-direction: column; */
+  gap: 20px;
+  color: var(--text);
 }
+
+/* .sidebar {
+  flex: 1;
+}
+
+.main-content {
+  flex: 5;
+} */
 
 /* Estilos para el componente TagFilter */
 .tag-filter-container {
@@ -92,32 +116,8 @@
 
 
 
-.clear-filter-button {
-  background-color: #0077ff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.clear-filter-button:hover {
-  background-color: #005ec1;
-}
 
 
-/* sssssssssssssssssssssssssssssssssssssssssssssssss */
-
-/* TagFilter.css */
-
-/* TagFilter.css */
-
-
-
-
-
-/* aaaaaaaaaaaaaaaaaaaaa */
 
 div.index-page div.main-title-underline {
   width: 100%;
@@ -194,7 +194,7 @@ div.pagination {
   width: 100px;
   height: 40px;
   margin: 7px 7px;
-font-family: Montserrat;
+  font-family: Montserrat;
 }
 
 .paginationButton:hover {
@@ -218,63 +218,49 @@ font-family: Montserrat;
 
 
 
+/* Estilos para móviles */
 @media only screen and (max-width: 767px) {
+  div.index-page {
+    height: auto;
+  }
 
+  .layout {
+    flex-direction: column;
+    /* Cambiar a columna para móviles */
+    margin: 10px;
+  }
 
-    div.index-page {
-      height: 90vh;
-    }
+  .searchBar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: var(--text);
+    font-family: OpenSansItalic;
+  }
 
-    .layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      color: var(--text);
-      min-width: 300px;
-      margin: 30px;
-      /* align-items: center; */
-    }
-    .searchBar {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      margin-bottom: 30px;
-      color: var(--text);
-      font-family: OpenSansItalic;
-    }
+  .searchBar form {
+    background-color: var(--secondary);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: var(--text);
+    font-family: OpenSansItalic;
+  }
 
-    .searchBar form {
-      background-color: var(--secondary);
-      border-radius: 20px;
-      padding: 10px 20px;
-      color: var(--text);
-      font-family: OpenSansItalic;
-    }
+  .searchBar input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+    color: var(--text);
+    font-family: OpenSansItalic;
+  }
 
-    .searchBar input {
-      border: none;
-      background-color: transparent;
-      outline: none;
-      width: 300px;
-      font-size: 16px;
-      padding: 5px;
-      color: var(--text);
-      font-family: OpenSansItalic;
-    }
-
-    .searchBar input::placeholder {
-      color: var(--text-accent);
-      color: var(--text);
-      font-family: OpenSansItalic;
-    }
-
-    .footer{
-      margin-top:55%;
-    }
-
-    .pagination{
-      margin-bottom: 1000px;
-    }
-
-
+  .searchBar input::placeholder {
+    color: var(--text-accent);
+    color: var(--text);
+    font-family: OpenSansItalic;
+  }
 }

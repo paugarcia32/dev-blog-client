@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Footer.css";
 import { useTheme } from "../common/ThemeProvider.js";
+import darkLogo from '../Assets/logo-dark-theme.png'
+import lightLogo from '../Assets/logo-light-theme.png'
 
 export default function Footer() {
   const { theme, logoUrl } = useTheme();
@@ -18,7 +20,7 @@ export default function Footer() {
           <div className="footer-links-div">
             <Link to={'/'}>
               <img
-                src={theme === "dark" ? "Logo/logo-dark-theme.png" : "Logo/logo-light-theme.png"}
+                src={theme === "dark" ? darkLogo : lightLogo}
                 alt=""
                 id="logo"
               />

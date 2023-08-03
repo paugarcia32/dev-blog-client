@@ -101,7 +101,7 @@ export default function IndexPage() {
  return (
     <div className="index-page">
       <div className="layout">
-        <div>
+        <div className="sidebar">
           <SearchBar search={search} setSearch={setSearch} />
           <TagFilter
             tags={tags}
@@ -111,7 +111,7 @@ export default function IndexPage() {
           />
         </div>
         {/* Columna izquierda */}
-        <div>
+        <div className="main-content">
           <DisplayPosts posts={currentPosts} className="display" />
         </div>
         {/* Columna derecha */}
