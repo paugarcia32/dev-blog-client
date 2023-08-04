@@ -1,8 +1,12 @@
-import React from 'react';
-import '../styles/PrivacyPolicy.css';
-import TableOfContents from '../components/TOC2';
+import React, { useEffect } from "react";
+import "../styles/PrivacyPolicy.css";
+import TableOfContents from "../components/TOC2";
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const pageContent = `
     <p>Last updated: August 02, 2023</p>
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
@@ -178,7 +182,10 @@ const PrivacyPolicy = () => {
       <h1 className="main-title">Privacy Policy</h1>
       <div className="main-title-underline"></div>
       <TableOfContents content={pageContent} />
-      <div className="terms-content" dangerouslySetInnerHTML={{ __html: pageContent }}/>
+      <div
+        className="terms-content"
+        dangerouslySetInnerHTML={{ __html: pageContent }}
+      />
     </div>
   );
 };

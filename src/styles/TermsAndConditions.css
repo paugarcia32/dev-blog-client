@@ -1,4 +1,3 @@
-/* Terms and Conditions Page Styles */
 .terms-page {
   width: 80%;
   margin: 0 auto;
@@ -6,10 +5,14 @@
 }
 
 .main-title {
-  margin: 20px 0 10px 0;
-  text-align: left;
-  font-weight: 500;
+  color: var(--text);
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
   font-family: MerriweatherBold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .main-title-underline {
@@ -17,17 +20,16 @@
   text-align: left;
   height: 0.15rem;
   background: var(--accent);
-  /* Changed to accent color */
   margin-bottom: 20px;
 }
 
-.terms-content {
-  font-size: 1rem;
-}
-
-.terms-content h2 {
-  margin: 20px 0;
-  font-family: OpenSansBold;
+.terms-page h2 {
+  color: var(--text);
+  font-family: Merriweather;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .terms-content p {
@@ -39,4 +41,10 @@
 .terms-content ul {
   margin: 10px 0;
   padding-left: 20px;
+  font-family: OpenSans;
+}
+
+.terms-page a {
+  color: var(--accent);
+  font-family: Montserrat;
 }

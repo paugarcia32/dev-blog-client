@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/TOC.css";
+import "../styles/TOC2.css";
 
 function TableOfContents({ content }) {
   const [headings, setHeadings] = useState([]);
@@ -35,7 +35,9 @@ function TableOfContents({ content }) {
 
     // Buscar el párrafo que contiene el texto del encabezado y realizar el desplazamiento suave
     if (contentDiv) {
-      const paragraphsWithHeading = contentDiv.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
+      const paragraphsWithHeading = contentDiv.querySelectorAll(
+        "p, h1, h2, h3, h4, h5, h6"
+      );
       for (let i = 0; i < paragraphsWithHeading.length; i++) {
         if (paragraphsWithHeading[i].textContent === headingText) {
           paragraphsWithHeading[i].scrollIntoView({ behavior: "smooth" });
@@ -46,7 +48,7 @@ function TableOfContents({ content }) {
   };
 
   return (
-    <div className="table-of-contents">
+    <div className="table-of-contents2">
       {headings.length > 0 ? (
         <div>
           <h2>Table of Contents</h2>

@@ -1,25 +1,25 @@
-section.about{
+section.about {
   padding: 5rem 3rem 3rem 3rem;
   background-color: var(--background);
 }
-div.row{
+div.row {
   display: flex;
   justify-content: space-around;
 }
-div.row div.column{
+div.row div.column {
   width: 40%;
 }
 div.column div.tabs {
   display: flex;
 }
 
-div.signle-tab{
+div.signle-tab {
   background-color: var(--background);
   margin-right: 10px;
   cursor: pointer;
 }
 
-div.single-tab h2{
+div.single-tab h2 {
   display: block;
   padding: 10px 16px;
   border-radius: 4px;
@@ -29,7 +29,7 @@ div.single-tab h2{
   cursor: pointer;
 }
 
-div.about-img{
+div.about-img {
   position: relative;
   background-image: url("../Assets/profile.jpg");
   background-repeat: no-repeat;
@@ -39,41 +39,23 @@ div.about-img{
   width: 100%;
 }
 
-div.about-content{
+div.about-content {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   display: none;
 }
 
-div.active-content{
+div.active-content {
   display: block;
 }
-/* div.active-tab{
-  background:#18dcff;
-  position: relative;
-}
 
-div.active-tab::before{
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  content: '';
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-style: solid;
-  border-width: 5px 5px 0 5px;
-  border-color: #18dcff transparent transparent transparent;
-} */
-
-div.active-tab h2{
+div.active-tab h2 {
   /* background:white; */
   color: var(--text);
   font-family: Montserrat;
 }
 
-div.about-content h2{
+div.about-content h2 {
   font-size: 40px;
   font-weight: 700;
   line-height: 1.4;
@@ -81,7 +63,7 @@ div.about-content h2{
   font-family: Merriweather;
 }
 
-div.about-content p{
+div.about-content p {
   padding-bottom: 1rem;
   font-size: 16px;
   line-height: 1.8;
@@ -90,7 +72,7 @@ div.about-content p{
   font-family: OpenSans;
 }
 
-div.about-content h3{
+div.about-content h3 {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.5;
@@ -98,13 +80,13 @@ div.about-content h3{
   font-family: Merriweather;
 }
 
-div.skills-row{
+div.skills-row {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-div.skills-column{
+div.skills-column {
   margin-bottom: 30px;
   margin-right: 20px;
 }
@@ -117,7 +99,7 @@ div.progress-wrap h3 {
 
 div.progress {
   height: 8px;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--secondary);
   overflow: visible;
 }
 
@@ -129,20 +111,6 @@ div.progress-bar {
   border-radius: 5px;
 }
 
-div.progress-bar span {
-  position: absolute;
-  top: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--secondary);
-  padding: 4px 8px;
-  background-color: var(--primary);
-  border-radius: 4px;
-}
-
-/* Styles for different skills */
 .Developer {
   width: 80%;
 }
@@ -151,7 +119,6 @@ div.progress-bar span {
   width: 90%;
 }
 
-/* Add more styles for other skills here */
 .AnotherSkill {
   width: 70%;
 }
@@ -160,39 +127,33 @@ div.progress-bar span {
   width: 50%;
 }
 
-div.exp-column h3{
-  margin-bottom: 10px
+div.exp-column h3 {
+  margin-bottom: 10px;
 }
 
-div.exp-column span{
-  font-weight: 500;
-  color: #18dcff;
-}
-
-div.exp-column p{
+div.exp-column p {
   margin-top: 10px;
 }
 
-div.main-about-underline{
+div.main-about-underline {
   width: 80px;
   text-align: left;
   height: 0.15rem;
   background: var(--accent);
-  /* Changed to accent color */
   margin-bottom: 20px;
 }
 
-@media screen and (max-width:768px) {
-  div.about{
+@media screen and (max-width: 768px) {
+  div.about {
     padding: 2rem 1rem 3rem 1rem;
   }
 
-  div.row{
+  div.row {
     display: flex;
     flex-direction: column;
   }
 
-  div.about-img{
+  div.about-img {
     height: 500px;
   }
 
@@ -200,11 +161,11 @@ div.main-about-underline{
     width: 100%;
   }
 
-  div.tabs{
+  div.tabs {
     padding-top: 3rem;
   }
 
-  div.skills-row{
+  div.skills-row {
     grid-template-columns: 1fr;
   }
 }

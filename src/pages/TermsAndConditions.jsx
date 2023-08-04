@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/TermsAndConditions.css";
 import TableOfContents from "../components/TOC2";
 
 const TermsAndConditions = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const pageContent = `
     <p>
           Welcome to My Dev Journey! These terms and conditions outline the

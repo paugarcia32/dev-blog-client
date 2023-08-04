@@ -3,7 +3,7 @@ div.post-page {
   flex-direction: column;
   align-items: center;
   background-color: var(--background);
-  font-family: 'OpenSans', sans-serif;
+  font-family: "OpenSans", sans-serif;
   padding: 20px;
 }
 
@@ -22,7 +22,6 @@ div.content {
   flex: 1;
   line-height: 1.6;
 }
-
 
 div.headers {
   text-align: center;
@@ -43,21 +42,20 @@ div.tags {
   margin-bottom: 15px;
 }
 
-div.post-page a.author{
+div.post-page a.author {
   text-decoration: none;
   color: var(--accent);
 }
 
-div.post-page a{
+div.post-page a {
   text-decoration: none;
   color: var(--text);
 }
 
-div.post-page p{
+div.post-page p {
   color: var(--text);
   font-family: OpenSans;
 }
-
 
 .comment {
   margin-bottom: 20px;
@@ -105,7 +103,7 @@ div.post-page p{
 }
 
 .comment-form button {
-  background-color: var(--text);
+  background-color: var(--primary);
   color: var(--text-accent);
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -120,8 +118,6 @@ div.post-page p{
   font-size: 0.8rem;
 }
 
-
-
 .related-posts-section {
   margin-top: 40px;
   display: grid;
@@ -131,22 +127,19 @@ div.post-page p{
 }
 
 @media only screen and (max-width: 992px) {
-
   /* Cambiar a 3 columnas en pantallas más pequeñas */
   .related-posts-section {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-
-
 h2.RpostTitle {
   text-align: center;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
 }
 
 h2.CommentTitle {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   text-align: center;
 }
 
@@ -191,7 +184,6 @@ h2.CommentTitle {
   color: var(--accent);
 }
 
-
 @media only screen and (max-width: 767px) {
   div.post-page {
     flex-direction: column;
@@ -219,7 +211,6 @@ h2.CommentTitle {
     margin-bottom: 100px;
   }
 
-
   .comment {
     margin-bottom: 20px;
     padding: 20px;
@@ -227,7 +218,6 @@ h2.CommentTitle {
     border-radius: 20px;
     background-color: var(--secondary);
     min-width: 40rem;
-
   }
 
   .comment-header {
@@ -279,5 +269,4 @@ h2.CommentTitle {
     color: var(--text-dim);
     font-size: 0.8rem;
   }
-
 }
