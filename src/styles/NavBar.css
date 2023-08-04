@@ -19,7 +19,7 @@ body {
 
 nav li:hover {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--accent);
 }
 
 .site-title {
@@ -48,7 +48,6 @@ nav li:hover {
   align-items: flex-end;
   padding: 0.25rem;
   color: inherit;
-
 }
 
 .links-nav {
@@ -114,9 +113,7 @@ nav {
     font-size: 1.5rem;
   }
 
-  .nav img{
+  .nav img {
     max-width: 250px;
   }
 }
-
-

@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/TermsAndConditions.css";
-import TableOfContents from '../components/TOC2';
+import TableOfContents from "../components/TOC2";
 
 const TermsAndConditions = () => {
-   const pageContent = `
+  const pageContent = `
     <p>
           Welcome to My Dev Journey! These terms and conditions outline the
           rules and regulations for the use of My Dev Journey's Website,
@@ -266,9 +266,10 @@ const TermsAndConditions = () => {
       <h1 className="main-title">Terms and Conditions</h1>
       <div className="main-title-underline"></div>
       <TableOfContents content={pageContent} />
-      <div className="terms-content" dangerouslySetInnerHTML={{ __html: pageContent }}/>
-
-
+      <div
+        className="terms-content"
+        dangerouslySetInnerHTML={{ __html: pageContent }}
+      />
     </div>
   );
 };
