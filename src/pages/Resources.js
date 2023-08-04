@@ -14,8 +14,6 @@ const Resources = () => {
     { color: "--background", code: "Background" },
     { color: "--text", code: "Text" },
     { color: "--text-dim", code: "Text 2" },
-
-    // Add more colors as needed
   ];
 
   const colorBoxes = colorPalette

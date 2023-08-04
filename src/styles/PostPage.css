@@ -160,7 +160,7 @@ h2.CommentTitle {
 }
 
 .related-tags {
-  color: var(--text-dim);
+  color: var(--text);
 }
 
 .tags .tag {
