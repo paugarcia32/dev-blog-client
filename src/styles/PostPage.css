@@ -18,6 +18,22 @@ div.toc-tags {
   margin-top: 30px;
 }
 
+.tags-icon {
+  margin-right: 5px;
+  vertical-align: middle;
+  color: var(--accent); /* Color del ícono (ajústalo según tus preferencias) */
+}
+
+/* Estilos para los tags */
+.tags {
+  margin-bottom: 15px;
+}
+
+.tags .tag {
+  color: var(--accent);
+  font-weight: bold;
+}
+
 div.content {
   flex: 1;
   line-height: 1.6;
@@ -212,35 +228,41 @@ h2.CommentTitle {
   }
 
   .comment {
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reducir el margen inferior */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 20px;
     background-color: var(--secondary);
-    min-width: 40rem;
+    min-width: 300px; /* Eliminar el ancho mínimo para permitir que se ajuste en pantallas muy estrechas */
+    width: 600px;
   }
 
   .comment-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     font-weight: bold;
     margin-bottom: 5px;
   }
 
   .comment-content {
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reducir el margen inferior */
   }
 
   .comment-form {
+    /* align-items: center; */
     margin-top: 20px;
+    min-width: 300px; /* Eliminar el ancho mínimo para permitir que se ajuste en pantallas muy estrechas */
+    width: 600px;
+    padding: 15px; /* Reducir el padding para dar más espacio */
   }
 
   .comment-form input,
   .comment-form textarea,
   .comment-form button {
     display: block;
-    min-width: 40rem;
+    min-width: 300px; /* Eliminar el ancho mínimo para permitir que se ajuste en pantallas muy estrechas */
+    width: 600px;
     margin-bottom: 10px;
     padding: 12px;
     font-size: 16px;

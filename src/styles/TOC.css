@@ -2,10 +2,34 @@
   background-color: var(--background);
 }
 
-.table-of-contents h2 {
+/* .table-of-contents h2 {
   margin-bottom: 10px;
   font-size: 1em;
   font-family: 'Merriweather', serif;
+} */
+
+/* Agrega estilos para el icono */
+.toc-icon {
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+  color: var(--accent); /* Color del ícono (puedes ajustarlo) */
+}
+
+.title-icon {
+  display: flex; /* Utilizar flexbox para alinear ícono y título en la misma línea */
+  align-items: center; /* Alinear verticalmente ícono y título */
+  font-size: 1em;
+  font-family: "Merriweather", serif;
+}
+
+/* Estilos para el título */
+.table-of-contents h2 {
+  display: flex; /* Utilizar flexbox para alinear icono y texto */
+  align-items: center; /* Alinear verticalmente icono y texto */
+  margin-bottom: 10px;
+  font-size: 1em;
+  font-family: "Merriweather";
+  /* margin-left: 10px; */
+  margin-bottom: 13px;
 }
 
 .table-of-contents ul {
@@ -20,7 +44,7 @@
 .table-of-contents a {
   text-decoration: none;
   color: var(--text);
-  font-family: 'OpenSans', sans-serif;
+  font-family: "OpenSans", sans-serif;
   transition: color 0.3s ease; /* Agrega una transición de color */
 }
 
@@ -35,17 +59,17 @@
 
 .heading-level-1 {
   font-size: 0.9em;
-  font-family: 'OpenSansItalic', sans-serif;
+  font-family: "OpenSansItalic", sans-serif;
 }
 
 .heading-level-2 {
   font-size: 0.8em;
   margin-left: 20px;
-  font-family: 'OpenSansItalic', sans-serif;
+  font-family: "OpenSansItalic", sans-serif;
 }
 
 .heading-level-3 {
   font-size: 0.7em;
   margin-left: 40px;
-  font-family: 'OpenSansItalic', sans-serif;
+  font-family: "OpenSansItalic", sans-serif;
 }

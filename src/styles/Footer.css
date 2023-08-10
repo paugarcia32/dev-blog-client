@@ -16,6 +16,12 @@
   text-decoration: none;
   color: var(--accent);
 }
+
+.footer-container {
+  max-width: 1260px;
+  margin: 0 auto; /* Centrar el footer horizontalmente */
+}
+
 .sb_footer {
   display: flex;
   flex-direction: column;

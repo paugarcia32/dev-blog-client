@@ -28,3 +28,16 @@
   margin-top: 30px;
   margin-bottom: 10px;
 }
+
+.toc-icon2 {
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+  color: var(--accent); /* Color del ícono (puedes ajustarlo) */
+  margin-top: 17px;
+}
+
+.title-icon2 {
+  display: flex; /* Utilizar flexbox para alinear ícono y título en la misma línea */
+  align-items: center; /* Alinear verticalmente ícono y título */
+  font-size: 1em;
+  font-family: "Merriweather", serif;
+}

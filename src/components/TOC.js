@@ -1,4 +1,5 @@
-import '../styles/TOC.css'
+import "../styles/TOC.css";
+import { FaList, LiaHashtagSolid } from "react-icons/fa";
 
 import { useEffect, useState } from "react";
 
@@ -36,7 +37,9 @@ function TableOfContents({ content }) {
 
     // Buscar el párrafo que contiene el texto del encabezado y realizar el desplazamiento suave
     if (contentDiv) {
-      const paragraphsWithHeading = contentDiv.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
+      const paragraphsWithHeading = contentDiv.querySelectorAll(
+        "p, h1, h2, h3, h4, h5, h6"
+      );
       for (let i = 0; i < paragraphsWithHeading.length; i++) {
         if (paragraphsWithHeading[i].textContent === headingText) {
           paragraphsWithHeading[i].scrollIntoView({ behavior: "smooth" });
@@ -50,7 +53,10 @@ function TableOfContents({ content }) {
     <div className="table-of-contents">
       {headings.length > 0 ? (
         <div>
-          <h2>Table of Contents</h2>
+          <div className="title-icon">
+            <FaList className="toc-icon" />
+            <h2>Contents</h2>
+          </div>
           <ul>
             {headings.map((heading, index) => (
               <li

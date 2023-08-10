@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import '../styles/PostCard.css'
-import '../styles/IndexPage.css'
+import "../styles/PostCard.css";
+import "../styles/IndexPage.css";
 import SearchBar from "../components/SearchBar.js";
 import Pagination from "../components/Pagination.js";
 import TagFilter from "../components/TagFilter.js";
 import DisplayPosts from "../components/DisplayPosts.js";
-
 
 export default function IndexPage() {
   const [postsData, setPostsData] = useState([]);
@@ -98,7 +97,7 @@ export default function IndexPage() {
     setSelectedTags(selectedOptions);
   };
 
- return (
+  return (
     <div className="index-page">
       <div className="layout">
         <div className="sidebar">
@@ -115,7 +114,6 @@ export default function IndexPage() {
           <DisplayPosts posts={currentPosts} className="display" />
         </div>
         {/* Columna derecha */}
-
       </div>
       <Pagination
         currentPage={currentPage}

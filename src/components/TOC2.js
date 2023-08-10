@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/TOC2.css";
+import { FaList } from "react-icons/fa";
 
 function TableOfContents({ content }) {
   const [headings, setHeadings] = useState([]);
@@ -51,7 +52,10 @@ function TableOfContents({ content }) {
     <div className="table-of-contents2">
       {headings.length > 0 ? (
         <div>
-          <h2>Table of Contents</h2>
+          <div className="title-icon2">
+            <FaList className="toc-icon2" />
+            <h2>Contents</h2>
+          </div>
           <ul>
             {headings.map((heading, index) => (
               <li

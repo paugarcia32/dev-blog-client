@@ -88,15 +88,19 @@ div.index-page div.main-title-underline {
 .searchBar {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
   margin-bottom: 30px;
   color: var(--text);
+  font-family: OpenSansItalic;
 }
 
 .searchBar form {
+  display: flex; /* Alinea el icono y el FormControl en la misma línea */
+  align-items: center; /* Centra verticalmente el contenido */
   background-color: var(--secondary);
   border-radius: 15px;
-  padding: 5px 5px;
+  padding: 5px 10px;
   color: var(--text);
 }
 
@@ -132,11 +136,22 @@ div.index-page div.main-title-underline {
   padding: 5px;
   color: var(--text);
   font-family: OpenSansItalic;
+  flex: 1; /* Aprovecha todo el espacio disponible en el ancho */
 }
 
 .searchBar input::placeholder {
   color: var(--text);
   font-family: OpenSansItalic;
+}
+
+.-icon2 {
+  margin-right: 10px; /* Espacio entre el icono y el FormControl */
+  color: var(--accent); /* Color del icono */
+}
+
+.-icon2:hover {
+  margin-right: 10px; /* Espacio entre el icono y el FormControl */
+  color: var(--text-accent); /* Color del icono */
 }
 
 div.pagination {
