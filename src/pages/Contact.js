@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { FiMail, FiGithub } from "react-icons/fi"; // Import icons
 import "../styles/Contact.css";
+import CreateMessageForm from "../components/CreateMessage";
 
 export default function Contact() {
   useEffect(() => {
@@ -34,6 +35,8 @@ export default function Contact() {
           </a>
         </li>
       </ul>
+
+      <CreateMessageForm />
     </div>
   );
 }

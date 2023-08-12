@@ -61,8 +61,8 @@ export default function IndexPage() {
       // Filtrar por búsqueda
       const hasSearchText =
         post.title.toLowerCase().includes(search.toLowerCase()) ||
-        post.summary.toLowerCase().includes(search.toLowerCase()) ||
-        post.content.toLowerCase().includes(search.toLowerCase());
+        post.summary.toLowerCase().includes(search.toLowerCase());
+      // post.content.toLowerCase().includes(search.toLowerCase());
 
       return hasSelectedTags && hasSearchText;
     });
