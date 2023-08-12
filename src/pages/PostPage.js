@@ -55,12 +55,18 @@ export default function PostPage() {
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
+
+    const newComment = {
+      ...newCommentData,
+      postId: id, // Agrega el postId al comentario
+    };
+
     fetch(`${process.env.REACT_APP_URL}/post/${id}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newCommentData),
+      body: JSON.stringify(newComment),
     })
       .then((response) => response.json())
       .then((data) => {
