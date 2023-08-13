@@ -4,9 +4,8 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import "../styles/NavBar.css";
 import { ThemeProvider, useTheme } from "../common/ThemeProvider.js";
 
-
 export default function NavBar() {
-  const { theme, toggleTheme } = useTheme(); // Suscribir el NavBar al contexto del tema
+  const { theme, toggleTheme } = useTheme();
   const navRef = useRef();
 
   useEffect(() => {
@@ -24,13 +23,21 @@ export default function NavBar() {
   return (
     <header className="nav">
       <Link to="/" className="site-title">
-        <img src={theme === "dark" ? "Logo/logo-dark-theme.png" : "Logo/logo-light-theme.png"} alt="" id="logo" />
+        <img
+          src={
+            theme === "dark"
+              ? "Logo/logo-dark-theme.png"
+              : "Logo/logo-light-theme.png"
+          }
+          alt=""
+          id="logo"
+        />
       </Link>
       <button className="nav-btn" onClick={showNavbar}>
         <FaBars />
       </button>
       <nav className="links-nav" ref={navRef}>
-      {/* <nav className={`links-nav ${theme === "dark" ? "responsive_nav" : ""}`} ref={navRef}> */}
+        {/* <nav className={`links-nav ${theme === "dark" ? "responsive_nav" : ""}`} ref={navRef}> */}
         <ul>
           <li>
             <CustomLink to="/contact">Contact</CustomLink>
@@ -39,7 +46,12 @@ export default function NavBar() {
             <CustomLink to="/about">About</CustomLink>
           </li>
         </ul>
-        <img src={theme === "dark" ? "sun.png" : "moon.png"} alt="" id="icon" onClick={toggleTheme} />
+        <img
+          src={theme === "dark" ? "sun.png" : "moon.png"}
+          alt=""
+          id="icon"
+          onClick={toggleTheme}
+        />
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>

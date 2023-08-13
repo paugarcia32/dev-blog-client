@@ -147,9 +147,9 @@ div.post-page p {
 
 .related-posts-section {
   margin-top: 40px;
-  display: flex; /* Cambiamos a flexbox para centrar las tarjetas */
-  flex-direction: column; /* Aplicamos una dirección de columna para apilar verticalmente */
-  align-items: center; /* Centramos horizontalmente en el centro de la pantalla */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 20px;
   margin-bottom: 100px;
 }

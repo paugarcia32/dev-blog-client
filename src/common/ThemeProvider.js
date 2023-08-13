@@ -1,14 +1,15 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import sunIcon from '../Assets/sun.png';
-import moonIcon from '../Assets/moon.png';
-import darkLogo from '../Assets/logo-dark-theme.png'
-import lightLogo from '../Assets/logo-light-theme.png'
-
+import sunIcon from "../Assets/sun.png";
+import moonIcon from "../Assets/moon.png";
+import darkLogo from "../Assets/logo-dark-theme.png";
+import lightLogo from "../Assets/logo-light-theme.png";
 
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(localStorage.getItem("selectedTheme") || "light");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("selectedTheme") || "light"
+  );
   const logoUrl = theme === "dark" ? darkLogo : lightLogo;
 
   const setDarkMode = () => {

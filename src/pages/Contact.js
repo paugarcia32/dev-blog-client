@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FiMail, FiGithub } from "react-icons/fi"; // Import icons
+import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import "../styles/Contact.css";
 import CreateMessageForm from "../components/CreateMessage";
 
@@ -7,36 +7,54 @@ export default function Contact() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const contactInfo = [
+    {
+      icon: <FiMail />,
+      site: "Email",
+      username: "paugarcia32@gmail.com",
+    },
+    {
+      icon: <FiGithub />,
+      site: "GitHub",
+      username: "paugarcia32",
+    },
+    {
+      icon: <FiLinkedin />,
+      site: "LinkedIn",
+      username: "Pau Garcia",
+    },
+  ];
+
   return (
     <div className="contact-container">
-      <h1>Contact Me</h1>
+      <h1>Get In Touch</h1>
       <div className="main-title-underline"></div>
-      <p>
-        If you have any questions or inquiries, please feel free to contact me:
-      </p>
-      <ul>
-        <li>
-          <span className="icon">
-            <FiMail />
-          </span>
-          Email: paugarcia32@gmail.com
-        </li>
-        <li>
-          <span className="icon">
-            <FiGithub />
-          </span>
-          GitHub:{" "}
-          <a
-            href="https://github.com/paugarcia32"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            paugarcia32
-          </a>
-        </li>
-      </ul>
+      <div className="rowContact">
+        <p>
+          Welcome to my Contact Me page! Whether you have an exciting project in
+          mind, are interested in collaboration, or simply want to connect, I'm
+          here to listen and help. Feel free to drop me a message and let's
+          start a conversation. Your ideas, questions, and thoughts are valuable
+          to me, and I'm eager to hear from you. Together, we can create
+          something amazing. Looking forward to the opportunity to work with you
+          and explore new possibilities.
+        </p>
 
-      <CreateMessageForm />
+        <CreateMessageForm />
+      </div>
+
+      <div className="contact-cards">
+        {contactInfo.map((contact) => (
+          <div key={contact.site} className="contact-card">
+            <span className="icon">{contact.icon}</span>
+            <div className="contact-info">
+              <p className="Psite">{contact.site}</p>
+              <p className="Pusername">{contact.username}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

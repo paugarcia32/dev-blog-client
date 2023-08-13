@@ -1,9 +1,10 @@
 import { useState } from "react";
-import * as EmailValidator from "email-validator"; // Importa el paquete email-validator
+import * as EmailValidator from "email-validator";
+import "../styles/CreateMessage.css";
 
 const CreateMessageForm = () => {
   const [author, setAuthor] = useState("");
-  const [email, setEmail] = useState(""); // Agrega el estado para el correo electrónico
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -15,7 +16,6 @@ const CreateMessageForm = () => {
       return;
     }
 
-    // Valida el formato del correo electrónico utilizando email-validator
     if (!EmailValidator.validate(email)) {
       alert("Please enter a valid email address.");
       return;
@@ -29,7 +29,7 @@ const CreateMessageForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ author, email, message }), // Agrega 'email' aquí
+        body: JSON.stringify({ author, email, message }),
       });
 
       if (response.ok) {
@@ -49,36 +49,40 @@ const CreateMessageForm = () => {
   };
 
   return (
-    <div>
+    <div className="sendMessage">
       <h2>Create a New Message</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="author">Author:</label>
+        <div className="AuthorMessage">
           <input
+            placeholder="Name"
             type="text"
             id="author"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
+        <div className="EmailMessage">
           <input
+            placeholder="Email Address"
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
-          <label htmlFor="message">Message:</label>
+        <div className="ContentMessage">
           <textarea
+            placeholder="Message"
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>
-        <button type="submit" disabled={isSubmitting}>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="create-message"
+        >
           Create Message
         </button>
       </form>
