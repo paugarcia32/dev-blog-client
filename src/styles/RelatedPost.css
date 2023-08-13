@@ -16,6 +16,15 @@
   }
 }
 
+.related-post a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Usa el color del texto del componente padre */
+}
+
+.related-post a:hover {
+  text-decoration: none; /* Mantén el subrayado desactivado al pasar el cursor */
+}
+
 .image2 img {
   width: 100%;
   height: 150px;
@@ -26,7 +35,7 @@
 
 .related-post-content {
   text-align: center;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 h3 {
@@ -35,53 +44,49 @@ h3 {
   margin-bottom: 10px;
 }
 
-
-
-
 .tag {
   margin-right: 5px;
 }
 
 @media only screen and (max-width: 767px) {
-
   .related-post {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      background-color: var(--secondary);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
 
-      min-height: 300px;
-      min-width: 400px;
+    min-height: 300px;
+    min-width: 400px;
 
-      &:hover {
-        transform: scale(1.05);
-      }
+    &:hover {
+      transform: scale(1.05);
     }
+  }
 
-    .image2 img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
+  .image2 img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
 
-    .related-post-content {
-      text-align: center;
-    }
+  .related-post-content {
+    text-align: center;
+  }
 
-    h3 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
 
-    .tag {
-      margin-right: 5px;
-    }
+  .tag {
+    margin-right: 5px;
+  }
 }

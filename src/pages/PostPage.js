@@ -58,7 +58,7 @@ export default function PostPage() {
 
     const newComment = {
       ...newCommentData,
-      postId: id, // Agrega el postId al comentario
+      postId: id, // Add postId to the comment
     };
 
     fetch(`${process.env.REACT_APP_URL}/post/${id}/comment`, {
@@ -113,7 +113,12 @@ export default function PostPage() {
               <br />
               {postInfo.tag.map((associatedTag, index) => (
                 <span key={associatedTag._id} className="tag">
-                  {associatedTag.title}
+                  <Link
+                    className="linkedTags"
+                    to={`/tags/${associatedTag._id}`}
+                  >
+                    {associatedTag.title}
+                  </Link>
                   {index !== postInfo.tag.length - 1 && ", "}
                 </span>
               ))}

@@ -10,7 +10,7 @@ div.post {
   height: 150px;
   overflow: hidden;
   max-width: 800px;
-  min-width: 600px;
+  min-width: 800px;
 }
 
 div.post:hover {

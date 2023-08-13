@@ -39,6 +39,15 @@ div.content {
   flex: 1;
   line-height: 1.6;
 }
+a.linkedTags {
+  color: var(--accent);
+}
+
+div.post-page a.linkedTags {
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
 
 div.headers {
   text-align: center;
@@ -66,7 +75,7 @@ div.post-page a.author {
 
 div.post-page a {
   text-decoration: none;
-  color: var(--text);
+  /* color: var(--text); */
 }
 
 div.post-page p {
