@@ -18,7 +18,7 @@ div.toc-content {
   width: 150px;
   margin-top: 30px;
   position: sticky;
-  top: 100px; /* Ajusta esta distancia según tus necesidades */
+  top: 100px;
 }
 
 .scrollable-content {
