@@ -2,16 +2,14 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaTags } from "react-icons/fa";
 import PostCard from "../components/PostCard";
-import useTagPageData from "../hooks/useTagPageData";
+import useTagDetails from "../hooks/useTagDetails";
+import useTagPosts from "../hooks/useTagPosts";
 import "../styles/TagPage.css";
 
 export default function TagPage() {
   const { tagId } = useParams();
-  const { tagName, tagPosts, fetchTagData } = useTagPageData(tagId);
-
-  useEffect(() => {
-    fetchTagData();
-  }, [fetchTagData]);
+  const { tagName } = useTagDetails(tagId);
+  const { tagPosts } = useTagPosts(tagId);
 
   return (
     <div className="TagPage">

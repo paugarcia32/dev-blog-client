@@ -6,15 +6,24 @@ import TableOfContents from "../components/TOC";
 import RelatedPost from "../components/RelatedPost";
 import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
-import usePostData from "../hooks/usePostData";
+import usePostInfo from "../hooks/usePostInfo";
+import useTags from "../hooks/useTags";
+import useComments from "../hooks/useComments";
+import usePostContent from "../hooks/usePostContent";
+import useRelatedPosts from "../hooks/useRelatedPosts";
+
 import "../styles/PostPage.css";
 import { FaTags } from "react-icons/fa";
 
 export default function PostPage() {
   const { id } = useParams();
   const { userInfo } = useContext(UserContext);
-  const { postInfo, tags, comments, setComments, postContent, relatedPosts } =
-    usePostData(id);
+  const { postInfo } = usePostInfo(id);
+  const tags = useTags();
+  const { comments, setComments } = useComments(id);
+  const { postContent } = usePostContent(id);
+  const { relatedPosts } = useRelatedPosts(id);
+
   const [newCommentData, setNewCommentData] = useState({
     autor: "",
     contenido: "",
@@ -65,7 +74,6 @@ export default function PostPage() {
         <div className="headers">
           <h1>{postInfo.title}</h1>
           <div className="h-text">
-            {/* <time>{formatISO9075(new Date(postInfo.createdAt))}</time> */}
             <time>
               {formatISO9075(new Date(Date.parse(postInfo.createdAt)))}
             </time>
@@ -99,7 +107,7 @@ export default function PostPage() {
                 </span>
               ))}
             </div>
-            {postContent && <TableOfContents content={postContent} />}
+            {postContent && <TableOfContents content={postInfo.content} />}
           </div>
           <div
             className="content"
