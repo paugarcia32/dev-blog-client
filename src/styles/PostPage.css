@@ -14,9 +14,16 @@ div.toc-content {
   margin-top: 40px;
 }
 
-div.toc-tags {
+.toc-tags {
   width: 150px;
   margin-top: 30px;
+  position: sticky;
+  top: 100px; /* Ajusta esta distancia según tus necesidades */
+}
+
+.scrollable-content {
+  display: flex;
+  align-items: flex-start;
 }
 
 .tags-icon {

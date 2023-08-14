@@ -86,27 +86,32 @@ export default function PostPage() {
         </div>
 
         <div className="toc-content">
-          <div className="toc-tags">
-            <div className="tags">
-              <strong className="related-tags">
-                <FaTags className="tags-icon" /> Tags:
-              </strong>
+          <div className="scrollable-content">
+            <div className="toc-tags">
+              <div className="tags">
+                <strong className="related-tags">
+                  <FaTags className="tags-icon" /> Tags:
+                </strong>
 
-              <br />
-              {postInfo.tag.map((associatedTag, index) => (
-                <span key={associatedTag._id} className="tag">
-                  <Link
-                    className="linkedTags"
-                    to={`/tags/${associatedTag._id}`}
-                  >
-                    {associatedTag.title}
-                  </Link>
-                  {index !== postInfo.tag.length - 1 && ", "}
-                </span>
-              ))}
+                <br />
+                {postInfo.tag.map((associatedTag, index) => (
+                  <span key={associatedTag._id} className="tag">
+                    <Link
+                      className="linkedTags"
+                      to={`/tags/${associatedTag._id}`}
+                    >
+                      {associatedTag.title}
+                    </Link>
+                    {index !== postInfo.tag.length - 1 && ", "}
+                  </span>
+                ))}
+              </div>
+              {postInfo.content && (
+                <TableOfContents content={postInfo.content} />
+              )}
             </div>
-            {postInfo.content && <TableOfContents content={postInfo.content} />}
           </div>
+
           <div
             className="content"
             dangerouslySetInnerHTML={{ __html: postInfo.content }}
