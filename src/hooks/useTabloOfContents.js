@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import "../styles/TOC2.css";
-import { FaList } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
-function TableOfContents({ content }) {
+const useTableOfContents = (content) => {
   const [headings, setHeadings] = useState([]);
   const [activeHeadingIndex, setActiveHeadingIndex] = useState(null);
 
@@ -40,7 +38,7 @@ function TableOfContents({ content }) {
   };
 
   const scrollToHeading = (headingText) => {
-    const contentDiv = document.querySelector(".terms-content");
+    const contentDiv = document.querySelector(".content");
     if (contentDiv) {
       const paragraphsWithHeading = contentDiv.querySelectorAll(
         "p, h1, h2, h3, h4, h5, h6"
@@ -54,35 +52,12 @@ function TableOfContents({ content }) {
     }
   };
 
-  return (
-    <div className="table-of-contents2">
-      {headings.length > 0 ? (
-        <div>
-          <div className="title-icon2">
-            <FaList className="toc-icon2" />
-            <h2>Contents</h2>
-          </div>
-          <ul>
-            {headings.map((heading, index) => (
-              <li
-                key={index}
-                style={{ marginLeft: getIndentation(heading.level) }}
-                className={`heading-level-${heading.level} ${
-                  index === activeHeadingIndex ? "active" : ""
-                }`}
-              >
-                <a href="#!" onClick={() => handleHeadingClick(index)}>
-                  {heading.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <p>No table of contents available.</p>
-      )}
-    </div>
-  );
-}
+  return {
+    headings,
+    activeHeadingIndex,
+    handleHeadingClick,
+    getIndentation,
+  };
+};
 
-export default TableOfContents;
+export default useTableOfContents;

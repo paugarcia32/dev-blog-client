@@ -1,52 +1,24 @@
-import React, { useEffect, useContext, useState } from "react";
-import { formatISO9075 } from "date-fns";
+import React, { useContext, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import { formatISO9075 } from "date-fns";
 import TableOfContents from "../components/TOC";
 import RelatedPost from "../components/RelatedPost";
+import CommentList from "../components/CommentList";
+import CommentForm from "../components/CommentForm";
+import usePostData from "../hooks/usePostData";
 import "../styles/PostPage.css";
-import { ThemeProvider } from "../common/ThemeProvider";
 import { FaTags } from "react-icons/fa";
 
 export default function PostPage() {
   const { id } = useParams();
-  const [postInfo, setPostInfo] = useState(null);
   const { userInfo } = useContext(UserContext);
-  const [tags, setTags] = useState([]);
-  const [postContent, setPostContent] = useState("");
-  const [comments, setComments] = useState([]);
-  const [relatedPosts, setRelatedPosts] = useState([]);
+  const { postInfo, tags, comments, setComments, postContent, relatedPosts } =
+    usePostData(id);
   const [newCommentData, setNewCommentData] = useState({
     autor: "",
     contenido: "",
   });
-
-  useEffect(() => {
-    Promise.all([
-      fetch(`${process.env.REACT_APP_URL}/post/${id}`).then((response) =>
-        response.json()
-      ),
-      fetch(`${process.env.REACT_APP_URL}/tags`, {
-        credentials: "include",
-      }).then((response) => response.json()),
-      fetch(`${process.env.REACT_APP_URL}/post/${id}/comments`).then(
-        (response) => response.json()
-      ),
-      fetch(`${process.env.REACT_APP_URL}/post/${id}/related`).then(
-        (response) => response.json()
-      ),
-    ])
-      .then(([postInfo, tagsData, commentsData, relatedPostsData]) => {
-        setPostInfo(postInfo);
-        setTags(tagsData);
-        setComments(commentsData);
-        setPostContent(postInfo.content);
-        setRelatedPosts(relatedPostsData);
-      })
-      .catch((error) => {
-        console.error("Error fetching post, tags, and comments:", error);
-      });
-  }, [id]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -58,7 +30,7 @@ export default function PostPage() {
 
     const newComment = {
       ...newCommentData,
-      postId: id, // Add postId to the comment
+      postId: id,
     };
 
     fetch(`${process.env.REACT_APP_URL}/post/${id}/comment`, {
@@ -93,7 +65,11 @@ export default function PostPage() {
         <div className="headers">
           <h1>{postInfo.title}</h1>
           <div className="h-text">
-            <time>{formatISO9075(new Date(postInfo.createdAt))}</time>
+            {/* <time>{formatISO9075(new Date(postInfo.createdAt))}</time> */}
+            <time>
+              {formatISO9075(new Date(Date.parse(postInfo.createdAt)))}
+            </time>
+
             <div className="author">
               by&nbsp;
               <Link className="author" to={"/about"}>
@@ -139,40 +115,14 @@ export default function PostPage() {
           </div>
         </div>
 
-        <div className="comments-section">
-          <h2 className="CommentTitle">Comments</h2>
-          {comments.map((comment) => (
-            <div key={comment._id} className="comment">
-              <div className="comment-header">
-                <span>{comment.autor}</span>
-                <time className="comment-time">
-                  {formatISO9075(new Date(comment.fecha_comentario))}
-                </time>
-              </div>
-              <div className="comment-content">{comment.contenido}</div>
-            </div>
-          ))}
-        </div>
+        <CommentList comments={comments} />
 
         {userInfo && (
-          <form className="comment-form" onSubmit={handleCommentSubmit}>
-            <input
-              type="text"
-              name="autor"
-              placeholder="Your name"
-              value={newCommentData.autor}
-              onChange={handleInputChange}
-              required
-            />
-            <textarea
-              name="contenido"
-              placeholder="Write your comment here"
-              value={newCommentData.contenido}
-              onChange={handleInputChange}
-              required
-            />
-            <button type="submit">Send comment</button>
-          </form>
+          <CommentForm
+            newCommentData={newCommentData}
+            handleInputChange={handleInputChange}
+            handleCommentSubmit={handleCommentSubmit}
+          />
         )}
       </div>
     </>

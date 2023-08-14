@@ -11,7 +11,6 @@ export default function Post({
   author,
   tag,
 }) {
-  // Function to extract the titles of the tags and join them with a space
   const getTagTitles = () => tag.map((tag) => tag.title).join(" ");
 
   return (

@@ -11,18 +11,20 @@
 
   max-height: 400px;
   max-width: 200px;
+  min-height: 400px;
+  min-width: 200px;
   &:hover {
     transform: scale(1.05);
   }
 }
 
 .related-post a {
-  text-decoration: none; /* Elimina el subrayado */
-  color: inherit; /* Usa el color del texto del componente padre */
+  text-decoration: none;
+  color: inherit;
 }
 
 .related-post a:hover {
-  text-decoration: none; /* Mantén el subrayado desactivado al pasar el cursor */
+  text-decoration: none;
 }
 
 .image2 img {
