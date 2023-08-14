@@ -97,30 +97,52 @@ export default function IndexPage() {
     setSelectedTags(selectedOptions);
   };
 
-  return (
+  // return (
+  //   <div className="index-page">
+  //     {/* <div className="layout"> */}
+  //       {/* <div className="sidebar"> */}
+  //       <div className="content-container">
+  //         <SearchBar search={search} setSearch={setSearch} />
+  //         <TagFilter
+  //           tags={tags}
+  //           selectedTags={selectedTags}
+  //           handleClearFilter={handleClearFilter}
+  //           handleChange={handleChange}
+  //         />
+  //       </div>
+  //       {/* Columna izquierda */}
+  //       <div className="main-content">
+  //         <DisplayPosts posts={currentPosts} className="display" />
+  //       </div>
+  //       {/* Columna derecha */}
+  //     {/* </div> */}
+  //     <Pagination
+  //       currentPage={currentPage}
+  //       totalPages={totalPages}
+  //       handlePrevPage={handlePrevPage}
+  //       handleNextPage={handleNextPage}
+  //     />
+  //   </div>
+  // );
+
+    return (
     <div className="index-page">
-      <div className="layout">
-        <div className="sidebar">
-          <SearchBar search={search} setSearch={setSearch} />
-          <TagFilter
-            tags={tags}
-            selectedTags={selectedTags}
-            handleClearFilter={handleClearFilter}
-            handleChange={handleChange}
-          />
-        </div>
-        {/* Columna izquierda */}
-        <div className="main-content">
-          <DisplayPosts posts={currentPosts} className="display" />
-        </div>
-        {/* Columna derecha */}
+      <div className="content-container">
+        <SearchBar search={search} setSearch={setSearch} />
+        <TagFilter
+          tags={tags}
+          selectedTags={selectedTags}
+          handleClearFilter={handleClearFilter}
+          handleChange={handleChange}
+        />
+        <DisplayPosts posts={currentPosts} />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          handlePrevPage={handlePrevPage}
+          handleNextPage={handleNextPage}
+        />
       </div>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        handlePrevPage={handlePrevPage}
-        handleNextPage={handleNextPage}
-      />
     </div>
   );
 }
