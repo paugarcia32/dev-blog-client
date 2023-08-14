@@ -4,12 +4,12 @@ import { Accordion } from "../components/Accordion.jsx";
 
 export const FAQ = () => {
   return (
-    <div>
+    <div className="FAQPage">
       <div>
         <h3 className="main-title">Frequently Asked Questions</h3>
         <div className="main-title-underline"></div>
         {data.map((section, index) => (
-          <Accordion className='accordion' key={index} section={section} />
+          <Accordion className="accordion" key={index} section={section} />
         ))}
       </div>
     </div>

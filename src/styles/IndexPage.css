@@ -4,11 +4,10 @@
   justify-content: space-between;
 } */
 
-
 .index-page {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   min-height: 100vh;
   background-color: var(--background);
   padding: 20px;
@@ -22,7 +21,6 @@
   max-width: 960px;
   width: 100%;
 }
-
 
 .layout {
   flex: 1;
@@ -43,36 +41,53 @@
   margin-bottom: 10px;
 }
 
-.tag-select {
+div.tag-filter-container .tag-select {
   background: var(--secondary);
+  border: none;
+  border-radius: 15px;
 }
 
-.tag-select:hover {
+div.tag-filter-container .tag-select:hover {
   background: var(--accent);
-  border: var(--accent);
+  border: none;
+  border-radius: 15px;
 }
 
-.tag-select .react-dropdown-select-input:hover {
+div.tag-filter-container .tag-select:hover .react-dropdown-select-option {
+  color: var(--text);
+  background-color: var(--secondary);
+}
+
+div.tag-filter-container .tag-select .react-dropdown-select-input:hover {
   color: var(--text-accent);
   width: 150px;
 }
 
-.tag-select .react-dropdown-select-input {
+div.tag-filter-container .tag-select .react-dropdown-select-input {
   color: var(--text);
   font-family: OpenSansItalic;
   width: 150px;
 }
 
-.tag-select .react-dropdown-select-option {
+div.tag-filter-container:hover .react-dropdown-select-input {
   color: var(--text-accent);
-  background-color: var(--accent);
 }
 
-.react-dropdown-select {
+div.tag-filter-container .tag-select .react-dropdown-select-option {
+  color: var(--text-accent);
+  background-color: var(--accent);
+  border-radius: 7px;
+}
+
+div.tag-filter-container:hover .react-dropdown-select {
+  color: var(--text-accent);
+}
+
+div.tag-filter-container .react-dropdown-select {
   color: var(--accent);
 }
 
-.tag-select .react-dropdown-select-dropdown {
+div.tag-filter-container .tag-select .react-dropdown-select-dropdown {
   position: absolute;
   left: 0;
   border: none;
@@ -88,7 +103,7 @@
   color: var(--text-accent);
 }
 
-.tag-select .react-dropdown-select-item {
+div.tag-filter-container .tag-select .react-dropdown-select-item {
   color: var(--text-accent);
   border-bottom: 1px solid var(--text-accent);
   font-family: OpenSans;
@@ -110,7 +125,7 @@ div.index-page div.main-title-underline {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: var(--text);
   font-family: OpenSansItalic;
 }
@@ -137,12 +152,23 @@ div.index-page div.main-title-underline {
   font-family: OpenSansItalic;
 }
 
-.searchBar input:hover {
+.d-flex:hover .-icon2 {
+  margin-right: 10px;
+  color: var(--text-accent);
+}
+
+.d-flex:hover input::placeholder {
   color: var(--text-accent);
   font-family: OpenSansItalic;
 }
 
-.searchBar input:hover::placeholder {
+.searchBar form:hover {
+  background-color: var(--accent);
+  color: var(--text-accent);
+  font-family: OpenSansItalic;
+}
+
+.searchBar input:hover {
   color: var(--text-accent);
   font-family: OpenSansItalic;
 }
@@ -167,11 +193,6 @@ div.index-page div.main-title-underline {
 .-icon2 {
   margin-right: 10px; /* Espacio entre el icono y el FormControl */
   color: var(--accent); /* Color del icono */
-}
-
-.-icon2:hover {
-  margin-right: 10px; /* Espacio entre el icono y el FormControl */
-  color: var(--text-accent); /* Color del icono */
 }
 
 div.pagination {

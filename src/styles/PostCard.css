@@ -14,10 +14,8 @@ div.post {
 }
 
 div.post:hover {
-  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); */
   box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
-    /* 2. shadow ring 👇 */ 0 0 0 1px hsla(230, 13%, 9%, 0.075),
-    /* 3. multiple soft shadows 👇 */ 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+    0 0 0 1px hsla(230, 13%, 9%, 0.075), 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
     0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
     0 3.5px 6px hsla(230, 13%, 9%, 0.09);
   transform: translateY(-2px);
@@ -27,7 +25,6 @@ div.post:hover {
 div.post div.texts {
   flex: 1;
   margin: 0;
-  /* Ajusta el valor según tus preferencias */
   font-size: 1.8rem;
 }
 
@@ -41,7 +38,6 @@ div.post img {
 }
 h2.title {
   margin-top: 10px;
-  /* Ajusta el valor según tus preferencias */
   font-size: 1.8rem;
   font-family: Merriweather;
   margin-bottom: 0px;
@@ -58,6 +54,7 @@ div.info {
 }
 div.post .author {
   font-size: 0.7rem;
+  color: var(--accent);
 }
 
 div.post p.summary {
@@ -81,6 +78,11 @@ div.texts a {
   color: inherit;
 }
 
+div.post span.tags-post a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
 img {
   max-width: 100%;
   object-fit: cover;
@@ -93,7 +95,6 @@ img {
     flex-direction: column;
     gap: 20px;
     margin-bottom: 30px;
-    /* align-items: center; */
     background-color: var(--secondary);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -106,8 +107,8 @@ img {
 
   div.post:hover {
     box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
-      /* 2. shadow ring 👇 */ 0 0 0 1px hsla(230, 13%, 9%, 0.075),
-      /* 3. multiple soft shadows 👇 */ 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+      0 0 0 1px hsla(230, 13%, 9%, 0.075),
+      0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
       0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
       0 3.5px 6px hsla(230, 13%, 9%, 0.09);
     transform: translateY(-2px);
@@ -126,9 +127,7 @@ img {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* Cambiar la dirección del flex a columna para colocar los textos debajo de la imagen */
     padding: 10px;
-    /* Añadir padding para separar los textos de los bordes */
   }
 
   div.post div.texts h2 {

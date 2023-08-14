@@ -1,6 +1,7 @@
 section.about {
   padding: 5rem 3rem 3rem 3rem;
   background-color: var(--background);
+  min-height: 100vh;
 }
 div.row {
   display: flex;
