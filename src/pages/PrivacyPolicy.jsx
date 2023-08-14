@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import "../styles/PrivacyPolicy.css";
 import TableOfContents from "../components/TOC2";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 const PrivacyPolicy = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
 
   const pageContent = `
     <p>Last updated: August 02, 2023</p>

@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import "../styles/TermsAndConditions.css";
 import TableOfContents from "../components/TOC2";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 const TermsAndConditions = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
   const pageContent = `
     <p>
           Welcome to My Dev Journey! These terms and conditions outline the

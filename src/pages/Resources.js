@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import "../styles/Resources.css";
 import mernImage from "../Assets/MERN.png";
 import TableOfContents from "../components/TOC2";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 const Resources = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
   const colorPalette = [
     { color: "--primary", code: "Primary" },
     { color: "--secondary", code: "Secondary" },

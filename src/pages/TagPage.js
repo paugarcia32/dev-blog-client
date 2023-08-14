@@ -4,12 +4,14 @@ import { FaTags } from "react-icons/fa";
 import PostCard from "../components/PostCard";
 import useTagDetails from "../hooks/useTagDetails";
 import useTagPosts from "../hooks/useTagPosts";
+import useScrollToTop from "../hooks/useScrollToTop";
 import "../styles/TagPage.css";
 
 export default function TagPage() {
   const { tagId } = useParams();
   const { tagName } = useTagDetails(tagId);
   const { tagPosts } = useTagPosts(tagId);
+  useScrollToTop();
 
   return (
     <div className="TagPage">

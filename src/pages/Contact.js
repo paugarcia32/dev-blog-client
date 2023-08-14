@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import "../styles/Contact.css";
 import CreateMessageForm from "../components/CreateMessage";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 export default function Contact() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
 
   const contactInfo = [
     {

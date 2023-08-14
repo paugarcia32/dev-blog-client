@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "../styles/About.css";
 import { useEffect } from "react";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 export default function About() {
   const [toggleTab, setToggleTab] = useState(1);
@@ -8,9 +9,7 @@ export default function About() {
     setToggleTab(index);
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
   return (
     <Fragment>
       <section className="about">
