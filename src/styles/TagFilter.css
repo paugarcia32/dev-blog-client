@@ -1,0 +1,77 @@
+.tag-filter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+div.tag-filter-container .tag-select {
+  background: var(--secondary);
+  border: none;
+  border-radius: 15px;
+}
+
+div.tag-filter-container .tag-select:hover {
+  background: var(--accent);
+  border: none;
+  border-radius: 15px;
+}
+
+div.tag-filter-container .tag-select:hover .react-dropdown-select-option {
+  color: var(--text);
+  background-color: var(--secondary);
+}
+
+div.tag-filter-container .tag-select .react-dropdown-select-input:hover {
+  color: var(--text-accent);
+  width: 150px;
+}
+
+div.tag-filter-container .tag-select .react-dropdown-select-input {
+  color: var(--text);
+  font-family: OpenSansItalic;
+  width: 150px;
+}
+
+div.tag-filter-container:hover .react-dropdown-select-input {
+  color: var(--text-accent);
+}
+
+div.tag-filter-container .tag-select .react-dropdown-select-option {
+  color: var(--text-accent);
+  background-color: var(--accent);
+  border-radius: 7px;
+}
+
+div.tag-filter-container:hover .react-dropdown-select {
+  color: var(--text-accent);
+}
+
+div.tag-filter-container .react-dropdown-select {
+  color: var(--accent);
+}
+
+div.tag-filter-container .tag-select .react-dropdown-select-dropdown {
+  position: absolute;
+  left: 0;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  max-height: 300px;
+  overflow: auto;
+  z-index: 9;
+  background: var(--accent);
+  box-shadow: none;
+  color: var(--text-accent);
+}
+
+div.tag-filter-container .tag-select .react-dropdown-select-item {
+  color: var(--text-accent);
+  border-bottom: 1px solid var(--text-accent);
+  font-family: OpenSans;
+  :hover {
+    color: var(--accent);
+  }
+}

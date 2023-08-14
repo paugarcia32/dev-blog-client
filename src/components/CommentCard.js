@@ -1,5 +1,6 @@
 import React from "react";
 import { formatISO9075 } from "date-fns";
+import "../styles/CommentStuff.css";
 
 const CommentCard = ({ comment }) => (
   <div className="comment">

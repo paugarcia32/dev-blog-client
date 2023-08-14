@@ -1,6 +1,7 @@
 import React from "react";
 import DropdownSelect from "react-dropdown-select";
 import { FaTags } from "react-icons/fa";
+import "../styles/TagFilter.css";
 
 export default function TagFilter({
   tags,

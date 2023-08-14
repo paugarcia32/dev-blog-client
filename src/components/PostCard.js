@@ -11,8 +11,6 @@ export default function Post({
   author,
   tag,
 }) {
-  const getTagTitles = () => tag.map((tag) => tag.title).join(" ");
-
   return (
     <div className="post">
       <div className="image">

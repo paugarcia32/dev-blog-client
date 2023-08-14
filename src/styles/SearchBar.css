@@ -1,0 +1,117 @@
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-family: OpenSansItalic;
+}
+
+.searchBar form {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary);
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: var(--text);
+}
+
+.searchBar:hover form {
+  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
+    0 0 0 1px hsla(230, 13%, 9%, 0.075), 0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+    0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+    0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+}
+
+.searchBar form:hover {
+  background-color: var(--accent);
+  color: var(--text-accent);
+  font-family: OpenSansItalic;
+}
+
+.d-flex:hover .-icon2 {
+  margin-right: 10px;
+  color: var(--text-accent);
+}
+
+.d-flex:hover input::placeholder {
+  color: var(--text-accent);
+  font-family: OpenSansItalic;
+}
+
+.searchBar form:hover {
+  background-color: var(--accent);
+  color: var(--text-accent);
+  font-family: OpenSansItalic;
+}
+
+.searchBar input:hover {
+  color: var(--text-accent);
+  font-family: OpenSansItalic;
+}
+
+.searchBar input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 500px;
+  font-size: 16px;
+  padding: 5px;
+  color: var(--text);
+  font-family: OpenSansItalic;
+  flex: 1;
+}
+
+.searchBar input::placeholder {
+  color: var(--text);
+  font-family: OpenSansItalic;
+}
+
+.-icon2 {
+  margin-right: 10px;
+  color: var(--accent);
+}
+
+@media only screen and (max-width: 980px) {
+  .content-container {
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+  }
+
+  .searchBar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: var(--text);
+    font-family: OpenSansItalic;
+  }
+
+  .searchBar form {
+    background-color: var(--secondary);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: var(--text);
+    font-family: OpenSansItalic;
+    width: 500px;
+  }
+
+  .searchBar input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+    color: var(--text);
+    font-family: OpenSansItalic;
+  }
+
+  .searchBar input::placeholder {
+    color: var(--text-accent);
+    color: var(--text);
+    font-family: OpenSansItalic;
+  }
+}

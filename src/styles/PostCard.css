@@ -9,8 +9,8 @@ div.post {
   transition: box-shadow 0.3s, transform 0.3s;
   height: 150px;
   overflow: hidden;
-  max-width: 800px;
-  min-width: 800px;
+  max-width: 850px;
+  min-width: 700px;
 }
 
 div.post:hover {
@@ -93,34 +93,22 @@ img {
   div.post {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 30px;
-    background-color: var(--secondary);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s, transform 0.3s;
     height: auto;
-    overflow: hidden;
-    max-width: 600px;
-    margin: 25px auto;
-  }
-
-  div.post:hover {
-    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.1),
-      0 0 0 1px hsla(230, 13%, 9%, 0.075),
-      0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
-      0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
-      0 3.5px 6px hsla(230, 13%, 9%, 0.09);
-    transform: translateY(-2px);
-    transform: translateX(-2px);
+    max-width: 500px;
+    min-width: 300px;
+    margin: 30px auto;
   }
 
   div.post img {
     flex: 1;
-    height: 150px;
+    height: auto;
+    width: 100%;
     object-fit: cover;
     border-radius: 8px 8px 0 0;
-    width: 600px;
+    height: 100%;
   }
 
   div.post div.texts {
@@ -153,7 +141,8 @@ img {
   }
 
   div.post p.summary {
-    margin: 10px 0;
-    line-height: 0.8rem;
+    margin: 5px 0;
+    line-height: 1rem;
+    font-size: 0.9rem;
   }
 }

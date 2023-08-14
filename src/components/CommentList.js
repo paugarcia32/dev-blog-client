@@ -1,5 +1,6 @@
 import React from "react";
 import CommentCard from "./CommentCard";
+import "../styles/CommentStuff.css";
 
 const CommentList = ({ comments }) => (
   <div className="comments-section">
