@@ -11,6 +11,9 @@ import useTags from "../hooks/useTags";
 import useComments from "../hooks/useComments";
 import useRelatedPosts from "../hooks/useRelatedPosts";
 
+import Prism from "prismjs";
+import "prismjs/themes/prism.css";
+
 import "../styles/PostPage.css";
 import { FaTags } from "react-icons/fa";
 
@@ -61,6 +64,9 @@ export default function PostPage() {
     window.scrollTo(0, 0);
   }, [id, postInfo]);
 
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
   if (!postInfo) return null;
 
   return (
