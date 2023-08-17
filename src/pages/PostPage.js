@@ -10,9 +10,7 @@ import usePostInfo from "../hooks/usePostInfo";
 import useTags from "../hooks/useTags";
 import useComments from "../hooks/useComments";
 import useRelatedPosts from "../hooks/useRelatedPosts";
-
-import Prism from "prismjs";
-import "prismjs/themes/prism.css";
+import katex from "katex";
 
 import "../styles/PostPage.css";
 import { FaTags } from "react-icons/fa";
@@ -64,84 +62,75 @@ export default function PostPage() {
     window.scrollTo(0, 0);
   }, [id, postInfo]);
 
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
   if (!postInfo) return null;
 
   return (
-    <>
-      <div className="post-page">
-        <div className="image">
-          <img src={`${process.env.REACT_APP_URL}/${postInfo.cover}`} alt="" />
-        </div>
-        <div className="headers">
-          <h1>{postInfo.title}</h1>
-          <div className="h-text">
-            <time>
-              {formatISO9075(new Date(Date.parse(postInfo.createdAt)))}
-            </time>
-
-            <div className="author">
-              by&nbsp;
-              <Link className="author" to={"/about"}>
-                {postInfo.author.username}
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="toc-content">
-          <div className="scrollable-content">
-            <div className="toc-tags">
-              <div className="tags">
-                <strong className="related-tags">
-                  <FaTags className="tags-icon" /> Tags:
-                </strong>
-
-                <br />
-                {postInfo.tag.map((associatedTag, index) => (
-                  <span key={associatedTag._id} className="tag">
-                    <Link
-                      className="linkedTags"
-                      to={`/tags/${associatedTag._id}`}
-                    >
-                      {associatedTag.title}
-                    </Link>
-                    {index !== postInfo.tag.length - 1 && ", "}
-                  </span>
-                ))}
-              </div>
-              {postInfo.content && (
-                <TableOfContents content={postInfo.content} />
-              )}
-            </div>
-          </div>
-
-          <div
-            className="content"
-            dangerouslySetInnerHTML={{ __html: postInfo.content }}
-          />
-        </div>
-        <div>
-          <h2 className="RpostTitle">Related Posts</h2>
-          <div className="related-posts-section">
-            {relatedPosts.map((post) => (
-              <RelatedPost key={post._id} post={post} />
-            ))}
-          </div>
-        </div>
-
-        <CommentList comments={comments} />
-
-        {userInfo && (
-          <CommentForm
-            newCommentData={newCommentData}
-            handleInputChange={handleInputChange}
-            handleCommentSubmit={handleCommentSubmit}
-          />
-        )}
+    <div className="post-page">
+      <div className="image">
+        <img src={`${process.env.REACT_APP_URL}/${postInfo.cover}`} alt="" />
       </div>
-    </>
+      <div className="headers">
+        <h1>{postInfo.title}</h1>
+        <div className="h-text">
+          <time>{formatISO9075(new Date(Date.parse(postInfo.createdAt)))}</time>
+
+          <div className="author">
+            by&nbsp;
+            <Link className="author" to={"/about"}>
+              {postInfo.author.username}
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="toc-content">
+        <div className="scrollable-content">
+          <div className="toc-tags">
+            <div className="tags">
+              <strong className="related-tags">
+                <FaTags className="tags-icon" /> Tags:
+              </strong>
+
+              <br />
+              {postInfo.tag.map((associatedTag, index) => (
+                <span key={associatedTag._id} className="tag">
+                  <Link
+                    className="linkedTags"
+                    to={`/tags/${associatedTag._id}`}
+                  >
+                    {associatedTag.title}
+                  </Link>
+                  {index !== postInfo.tag.length - 1 && ", "}
+                </span>
+              ))}
+            </div>
+            {postInfo.content && <TableOfContents content={postInfo.content} />}
+          </div>
+        </div>
+
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{ __html: postInfo.content }}
+        />
+      </div>
+      <div>
+        <h2 className="RpostTitle">Related Posts</h2>
+        <div className="related-posts-section">
+          {relatedPosts.map((post) => (
+            <RelatedPost key={post._id} post={post} />
+          ))}
+        </div>
+      </div>
+
+      <CommentList comments={comments} />
+
+      {userInfo && (
+        <CommentForm
+          newCommentData={newCommentData}
+          handleInputChange={handleInputChange}
+          handleCommentSubmit={handleCommentSubmit}
+        />
+      )}
+    </div>
   );
 }

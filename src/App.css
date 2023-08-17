@@ -22,6 +22,10 @@ main {
   background-color: var(--background);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: OpenSansBold;
   src: url(../public/fonts/Open_Sans/static/OpenSans-Bold.ttf);

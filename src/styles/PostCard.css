@@ -59,6 +59,7 @@ div.post .author {
 
 div.post p.summary {
   margin: 10px 0;
+  margin-right: 1px;
   line-height: 1rem;
   font-size: 1rem;
   font-family: OpenSans;
